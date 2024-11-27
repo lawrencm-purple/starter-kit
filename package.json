@@ -1,0 +1,36 @@
+{
+  "name": "starterkit",
+  "private": true,
+  "engines": {
+    "node": ">=20.16.0",
+    "pnpm": "^9.12.1"
+  },
+  "packageManager": "pnpm@9.14.2",
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "git clean -xdf node_modules",
+    "clean:workspaces": "turbo run clean",
+    "db:push": "turbo -F @acme/db push",
+    "db:studio": "turbo -F @acme/db studio",
+    "dev": "turbo dev --continue",
+    "dev:next": "turbo watch dev -F @com/nextjs...",
+    "format": "turbo run format --continue -- --cache --cache-location .cache/.prettiercache",
+    "format:fix": "turbo run format --continue -- --write --cache --cache-location .cache/.prettiercache",
+    "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache",
+    "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",
+    "lint:ws": "pnpm dlx sherif@latest",
+    "postinstall": "pnpm lint:ws",
+    "typecheck": "turbo run typecheck",
+    "ui-add": "turbo run ui-add"
+  },
+  "dependencies": {
+    "react": "^18.3.1"
+  },
+  "devDependencies": {
+    "@turbo/gen": "^2.3.1",
+    "prettier": "^3.3.2",
+    "turbo": "^2.3.1",
+    "typescript": "^5.5.3"
+  },
+  "prettier": "@com/prettier-config"
+}
