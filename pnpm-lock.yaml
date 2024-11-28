@@ -183,6 +183,9 @@ importers:
         specifier: link:@prisma/client/extension
         version: link:@prisma/client/extension
     devDependencies:
+      '@types/node':
+        specifier: ^20.14.10
+        version: 20.17.8
       prisma:
         specifier: ^5.14.0
         version: 5.22.0

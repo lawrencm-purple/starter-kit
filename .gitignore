@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+**/node_modules
 /.pnp
 .pnp.js
 
@@ -14,7 +15,7 @@
 db.sqlite
 
 # next.js
-/.next/
+*/**/.next/
 /out/
 next-env.d.ts
 
@@ -49,3 +50,4 @@ yarn-error.log*
 .turbo
 .expo
 /dist
+apps/nextjs/.next/

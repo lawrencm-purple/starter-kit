@@ -2,15 +2,18 @@ import Link from "next/link";
 
 // import { LatestPost } from "./_components/post";
 import { api, HydrateClient } from "../trpc/server";
-// import { auth } from "@com/auth";
+import { auth } from "@com/auth";
+import { LatestPost } from "./_components/post";
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC xx" });
-  // const session = (await auth()) ?? null;
+  const session = await auth();
 
-  // if (session?.user) {
-  //   void api.post.getLatest.prefetch();
-  // }
+  console.log("SESSION", session);
+
+  if (session?.user) {
+    void api.post.getLatest.prefetch();
+  }
 
   return (
     <HydrateClient>
@@ -50,18 +53,18 @@ export default async function Home() {
 
             <div className="flex flex-col items-center justify-center gap-4">
               <p className="text-center text-2xl text-white">
-                {/* {session && <span>Logged in as {session.user?.name}</span>} */}
+                {session && <span>Logged in as {session.user?.name}</span>}
               </p>
-              {/* <Link
+              <Link
                 href={session ? "/api/auth/signout" : "/api/auth/signin"}
                 className="rounded-full bg-white/10 px-10 py-3 font-semibold no-underline transition hover:bg-white/20"
               >
                 {session ? "Sign out" : "Sign in"}
-              </Link> */}
+              </Link>
             </div>
           </div>
 
-          {/* {session?.user && <LatestPost />} */}
+          {session?.user && <LatestPost />}
         </div>
       </main>
     </HydrateClient>
