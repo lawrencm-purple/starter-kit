@@ -1,0 +1,11 @@
+{
+  "type": "mdx",
+  "permalink": "/",
+  "source": "@site/src/pages/index.mdx",
+  "title": "Hello",
+  "frontMatter": {
+    "title": "Hello",
+    "sidebar_position": 1
+  },
+  "unlisted": false
+}
