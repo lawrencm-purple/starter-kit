@@ -1,0 +1,23 @@
+{
+  "name": "@com/ui",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "dev": "tsc",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "dependencies": {
+    "react": "^18.3.1"
+  },
+  "exports": {
+    "./MyComponent": "./src/my-component/MyComponent.tsx"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3"
+  }
+}
