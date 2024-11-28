@@ -1,5 +1,10 @@
+import React from "react"
 
-type Props = {}
+type Props = {
+    firstName: string;
+    lastName: string;
+    phone: string;
+}
 
 const MyComponent:React.FC<Props> = (props) => {
   return (
