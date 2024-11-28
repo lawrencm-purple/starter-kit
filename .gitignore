@@ -5,6 +5,10 @@
 **/node_modules
 /.pnp
 .pnp.js
+**/.cache
+# .cahche recursivly ignores all .cache folders in the project
+**/.cache
+
 
 # testing
 /coverage
@@ -51,3 +55,4 @@ yarn-error.log*
 .expo
 /dist
 apps/nextjs/.next/
+**/.cache
