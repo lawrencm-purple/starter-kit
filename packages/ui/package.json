@@ -12,13 +12,26 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
-    "react": "^18.3.1"
+    "@radix-ui/react-alert-dialog": "^1.1.2",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@storybook/test": "^8.4.5",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.0.0",
+    "lucide-react": "^0.462.0",
+    "react": "^18.3.1",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7"
   },
   "exports": {
-    "./MyComponent": "./src/my-component/MyComponent.tsx"
+    ".": [
+      "./src/shadcn/components/ui/button.tsx"
+    ],
+    "./utils": "./src/utils/utils.ts",
+    "./theme": "./src/index.css"
   },
   "devDependencies": {
     "@storybook/react": "^8.4.5",
-    "@types/react": "^18.3.3"
+    "@types/react": "^18.3.3",
+    "tailwindcss": "^3.4.15"
   }
 }

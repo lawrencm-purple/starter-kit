@@ -1,5 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
+
 import { join, dirname } from "path"
 
 /**
@@ -14,16 +15,32 @@ const config: StorybookConfig = {
     "../src/**/*.mdx",
     "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../../../packages/ui/src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+      "../../../packages/auth/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+
   ],
   "addons": [
     getAbsolutePath('@storybook/addon-onboarding'),
     getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@chromatic-com/storybook'),
-    getAbsolutePath('@storybook/addon-interactions')
+    getAbsolutePath('@storybook/addon-interactions'), 
+    getAbsolutePath('@storybook/addon-a11y'),
   ],
   "framework": {
     "name": getAbsolutePath('@storybook/react-vite'),
     "options": {}
-  }
+  },
+  viteFinal: async (config) => {
+    return {
+      ...config,
+      css: {
+        postcss: {
+          plugins: [
+            require('tailwindcss'),
+            require('autoprefixer'),
+          ],
+        },
+      },
+    };
+  },
 };
 export default config;
