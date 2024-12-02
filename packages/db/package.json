@@ -12,20 +12,22 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "@prisma/client": "^5.14.0",
-    "dotenv": "^16.4.5",
-    "dotenv-cli": "^7.4.4",
+    "@prisma/client": "catalog:prisma5",
+    "dotenv": "catalog:",
+    "dotenv-cli": "catalog:",
     "extension": "link:@prisma/client/extension"
   },
   "devDependencies": {
-    "@types/node": "^20.14.10",
-    "prisma": "^5.14.0",
-    "typescript": "^5.6.2"
+    "@com/tsconfig": "workspace:*",
+    "@types/node": "catalog:node20",
+    "prisma": "catalog:prisma5",
+    "typescript": "catalog:"
   },
   "exports": {
     ".": "./index.ts",
     "./schema": {
       "types": "./dist/schema.d.ts"
     }
-  }
+  },
+  "prettier": "@com/prettier-config"
 }

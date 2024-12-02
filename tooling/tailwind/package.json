@@ -3,12 +3,27 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "echo 'Add dev script here'",
-    "build": "echo 'Add build script here'",
-    "test": "echo 'Add test script here'",
-    "lint": "echo 'Add lint script here'"
+    "clean": "git clean -xdf .cache .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit"
   },
   "exports": {
     ".": "./tailwind.config.js"
-  }
-} 
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "catalog:tailwindcss",
+    "postcss": "catalog:tailwindcss",
+    "tailwindcss": "catalog:tailwindcss",
+    "tailwindcss-animate": "catalog:tailwindcss"
+  },
+  "devDependencies": {
+    "@com/eslint-config": "workspace:*",
+    "@com/prettier-config": "workspace:*",
+    "@com/tsconfig": "workspace:*",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:"
+  },
+  "prettier": "@com/prettier-config"
+}

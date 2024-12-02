@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import React from "react";
 import { Button } from "./button";
 import { expect, fn, userEvent, waitFor, within } from "@storybook/test";
+import React from "react";
 
 const meta: Meta = {
   component: Button,

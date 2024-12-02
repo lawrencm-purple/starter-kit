@@ -7,9 +7,7 @@ const config =  {
     "./stories/**/*.{js,jsx,ts,tsx,mdx}",
     "./.storybook/**/*.{js,jsx,ts,tsx,mdx}",
     "../../packages/ui/components/**/*.{js,jsx,ts,tsx,mdx}",
-
     "../../packages/ui/src/shadcn/components/ui/**/*.{js,jsx,ts,tsx,mdx}",
-
   ],
   theme: {
     extend: {

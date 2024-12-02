@@ -8,9 +8,6 @@
     "resolveJsonModule": true,
     "moduleDetection": "force",
     "isolatedModules": true,
-
-
-    
     "disableSourceOfProjectReferenceRedirect": true,
     "tsBuildInfoFile": "${configDir}/.cache/tsbuildinfo.json",
 

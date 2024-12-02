@@ -1,24 +1,21 @@
 {
-  "extends": "../tsconfig/internal-package.json",
-  "include": ["src", "*.ts","*.tsx", "@/lib/utils/utils.ts"],
+  "extends": "@com/tsconfig/internal-package.json",
+  "include": ["src", "*.ts", "*.tsx", "@/lib/utils/utils.ts"],
   "exclude": ["node_modules"],
-  
+
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "jsx": "react",
+    "esModuleInterop": true,
     "paths": {
       "@/components": ["./src/shadcn/components"],
       "@/lib": ["./src/shadcn/lib"],
       "@/lib/utils": ["./src/shadcn/lib/utils/index.ts"],
       "@/hooks": ["./src/shadcn/hooks"],
-      "@/components/ui": ["./src/shadcn/components/ui"],
-
-    },
+      "@/components/ui": ["./src/shadcn/components/ui"]
+    }
   },
   "paths": {
-      "@com/ui/*": ["./*"],
-      
-    },
-  
-
+    "@com/ui/*": ["./*"]
+  }
 }
