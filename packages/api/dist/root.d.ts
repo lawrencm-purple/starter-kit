@@ -60,8 +60,8 @@ export declare const appRouter: import("@trpc/server/unstable-core-do-not-import
                 name: string;
             };
             output: {
-                id: number;
                 name: string;
+                id: number;
                 createdAt: Date;
                 updatedAt: Date;
                 createdById: string;
@@ -70,8 +70,8 @@ export declare const appRouter: import("@trpc/server/unstable-core-do-not-import
         getLatest: import("@trpc/server").TRPCQueryProcedure<{
             input: void;
             output: {
-                id: number;
                 name: string;
+                id: number;
                 createdAt: Date;
                 updatedAt: Date;
                 createdById: string;
@@ -148,8 +148,8 @@ export declare const createCaller: import("@trpc/server/unstable-core-do-not-imp
                 name: string;
             };
             output: {
-                id: number;
                 name: string;
+                id: number;
                 createdAt: Date;
                 updatedAt: Date;
                 createdById: string;
@@ -158,8 +158,8 @@ export declare const createCaller: import("@trpc/server/unstable-core-do-not-imp
         getLatest: import("@trpc/server").TRPCQueryProcedure<{
             input: void;
             output: {
-                id: number;
                 name: string;
+                id: number;
                 createdAt: Date;
                 updatedAt: Date;
                 createdById: string;

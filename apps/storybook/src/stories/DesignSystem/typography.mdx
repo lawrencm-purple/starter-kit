@@ -1,0 +1,273 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Design System/Typography" />
+
+# Typography
+
+Our typography system is built with readability and accessibility in mind, leveraging Tailwind CSS and the Typography plugin to create consistent, scalable text styles.
+
+## Font Family
+
+We use a system-first approach with Inter as our primary font:
+
+<div className=" bg-gray-200 p-4 rounded-lg sb-unstyled">
+  <p className="font-sans">The quick brown fox jumps over the lazy dog (Inter/System)</p>
+  <p className="font-mono">const example = "Monospace font";</p>
+</div>
+
+```jsx
+font-sans: Inter, system-ui, -apple-system, sans-serif
+font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas
+```
+
+## Type Scale
+
+Our type scale follows a consistent progression that works harmoniously across different screen sizes.
+
+### Display Text
+
+<div className=" bg-gray-200 p-4 rounded-lg sb-unstyled">
+  <div className="text-7xl font-extrabold tracking-tight">Display 1</div>
+  <div className="text-6xl font-extrabold tracking-tight">Display 2</div>
+  <div className="text-5xl font-bold tracking-tight">Display 3</div>
+</div>
+
+```jsx
+<h1 className="text-7xl font-extrabold tracking-tight">Display 1</h1>
+<h1 className="text-6xl font-extrabold tracking-tight">Display 2</h1>
+<h1 className="text-5xl font-bold tracking-tight">Display 3</h1>
+```
+
+### Headings
+
+<div className=" bg-gray-200 p-4 rounded-lg">
+  <h1 className="text-4xl font-bold tracking-tight">Heading 1</h1>
+  <h2 className="text-3xl font-semibold tracking-tight">Heading 2</h2>
+  <h3 className="text-2xl font-semibold">Heading 3</h3>
+  <h4 className="text-xl font-medium">Heading 4</h4>
+  <h5 className="text-lg font-medium">Heading 5</h5>
+  <h6 className="text-base font-medium">Heading 6</h6>
+</div>
+
+```jsx
+<h1 className="text-4xl font-bold tracking-tight">Heading 1</h1>
+<h2 className="text-3xl font-semibold tracking-tight">Heading 2</h2>
+<h3 className="text-2xl font-semibold">Heading 3</h3>
+<h4 className="text-xl font-medium">Heading 4</h4>
+<h5 className="text-lg font-medium">Heading 5</h5>
+<h6 className="text-base font-medium">Heading 6</h6>
+```
+
+## Body Text
+
+### Default Body Text
+
+<div className=" bg-gray-200 p-4 rounded-lg sb-unstyled">
+
+<p className="text-base leading-7 text-gray-600">
+  Default body text uses a comfortable line height and slightly muted color for optimal readability in longer passages of text. The line height of 1.75 (leading-7) provides ample spacing between lines.
+</p>
+</div>
+
+```jsx
+<p className="text-base leading-7 text-gray-600">
+  Default body text uses a comfortable line height and slightly muted color for optimal readability in longer passages of text.
+</p>
+```
+
+### Large Body Text
+
+<div className=" bg-gray-200 p-4 rounded-lg sb-unstyled">
+
+<p className="text-lg leading-8 text-gray-600">
+  Large body text is used for introductory paragraphs or when you need slightly more prominent body copy. The increased size and line height help with readability while maintaining visual hierarchy.
+</p>
+</div>
+```jsx
+<p className="text-lg leading-8 text-gray-600">
+  Large body text is used for introductory paragraphs or when you need slightly more prominent body copy.
+</p>
+```
+
+### Small Text
+
+<div className=" bg-gray-200 p-4 rounded-lg sb-unstyled">
+
+<p className="text-sm leading-6 text-gray-500">
+  Small text is used for supporting content, captions, and metadata. The reduced size helps establish hierarchy while maintaining readability.
+</p>
+</div>
+```jsx
+<p className="text-sm leading-6 text-gray-500">
+  Small text is used for supporting content, captions, and metadata.
+</p>
+```
+
+## Rich Text Content
+
+When working with rich text content (like blog posts or articles), use the Typography plugin's `prose` classes:
+
+<div className=" bg-gray-200 p-4 rounded-lg sb-unstyled">
+
+<article className="prose prose-slate max-w-none">
+  <h1>Article Title</h1>
+  <p>Your content here with beautiful typography styling applied automatically. Notice how the spacing, line height, and other typographic details are handled by the Typography plugin.</p>
+  <ul>
+    <li>List item one</li>
+    <li>List item two</li>
+  </ul>
+  <blockquote>
+    Important callout message
+  </blockquote>
+</article>
+
+</div>
+```jsx
+<article className="prose prose-slate max-w-none">
+  <h1>Article Title</h1>
+  <p>Your content here...</p>
+  <ul>
+    <li>List item one</li>
+    <li>List item two</li>
+  </ul>
+  <blockquote>
+    Important callout message
+  </blockquote>
+</article>
+```
+
+### Prose Modifiers
+
+<div className=" bg-gray-200 p-4 rounded-lg sb-unstyled">
+
+  <div className="prose-sm">
+    <h3>Small Prose</h3>
+    <p>Smaller text size for dense content.</p>
+  </div>
+  
+  <div className="prose">
+    <h3>Default Prose</h3>
+    <p>Standard text size for most content.</p>
+  </div>
+  
+  <div className="prose-lg">
+    <h3>Large Prose</h3>
+    <p>Larger text size for better readability.</p>
+  </div>
+  
+  <div className="prose-xl">
+    <h3>Extra Large Prose</h3>
+    <p>Extra large text for impact.</p>
+  </div>
+</div>
+
+```jsx
+prose-sm    // Smaller text
+prose       // Default size
+prose-lg    // Larger text
+prose-xl    // Extra large text
+prose-2xl   // Maximum size
+```
+
+## Text Decoration
+
+### Links
+
+<div className=" bg-gray-200 p-4 rounded-lg sb-unstyled">
+
+  <a className="text-primary-600 hover:text-primary-700 underline decoration-2 underline-offset-2">
+    Default link style
+  </a>
+</div>
+
+```jsx
+<a className="text-primary-600 hover:text-primary-700 underline decoration-2 underline-offset-2">
+  Default link style
+</a>
+```
+
+### Emphasis
+
+<div className=" bg-gray-200 p-4 rounded-lg sb-unstyled">
+
+  <strong className="font-semibold">Bold text</strong>{' '}
+  <em className="italic">Italic text</em>{' '}
+  <span className="underline decoration-2 underline-offset-2">Underlined text</span>
+</div>
+
+```jsx
+<strong className="font-semibold">Bold text</strong>
+<em className="italic">Italic text</em>
+<span className="underline decoration-2 underline-offset-2">Underlined text</span>
+```
+
+## Letter Spacing
+
+<div className=" bg-gray-200 p-4 rounded-lg sb-unstyled">
+
+  <h1 className="tracking-tight">Tightened letter spacing (-0.025em)</h1>
+  <p className="tracking-normal">Normal letter spacing</p>
+  <span className="tracking-wide">Wide letter spacing (0.025em)</span>
+</div>
+
+```jsx
+<h1 className="tracking-tight">Tightened letter spacing (-0.025em)</h1>
+<p className="tracking-normal">Normal letter spacing</p>
+<span className="tracking-wide">Wide letter spacing (0.025em)</span>
+```
+
+## Text Alignment
+
+<div className=" bg-gray-200 p-4 rounded-lg sb-unstyled">
+
+<div className="space-y-4 border-l-4 border-blue-500 pl-4">
+  <p className="text-left">Left aligned text</p>
+  <p className="text-center">Center aligned text</p>
+  <p className="text-right">Right aligned text</p>
+  <p className="text-justify">Justified text that spans multiple lines to demonstrate the justification effect.</p>
+</div>
+</div>
+```jsx
+text-left      // Left align text
+text-center    // Center text
+text-right     // Right align text
+text-justify   // Justify text
+```
+
+## Text Transform
+
+<div className=" bg-gray-200 p-4 rounded-lg sb-unstyled">
+  <p className="uppercase">uppercase text</p>
+  <p className="lowercase">LOWERCASE TEXT</p>
+  <p className="capitalize">capitalize each word</p>
+  <p className="normal-case">NORMAL case TEXT</p>
+</div>
+
+```jsx
+uppercase      // Transform text to uppercase
+lowercase      // Transform text to lowercase
+capitalize     // Capitalize first letter of each word
+normal-case    // Use normal text casing
+```
+
+## Text Overflow
+
+<div className=" bg-gray-200 p-4 rounded-lg sb-unstyled">
+  <div className="w-48">
+    <p className="truncate">This is a very long text that will be truncated with an ellipsis at the end</p>
+  </div>
+  
+  <div className="w-48">
+    <p className="text-ellipsis overflow-hidden">This is a very long text that will be truncated with an ellipsis</p>
+  </div>
+  
+  <div className="w-48">
+    <p className="text-clip overflow-hidden">This is a very long text that will be clipped at the end</p>
+  </div>
+</div>
+
+```jsx
+truncate             // Truncate overflowing text with ...
+text-ellipsis       // Add ellipsis to overflowing text
+text-clip           // Clip overflowing text
+```

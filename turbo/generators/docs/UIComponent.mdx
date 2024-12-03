@@ -1,0 +1,58 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Dev Tools/Generators/UI Component" />
+
+# UI Component Generator
+
+This generator creates new presentational UI components for the project's component library.
+
+## Purpose
+
+Creates standardized, presentational ("dumb") components that:
+
+- Accept props for data and callbacks
+- Maintain internal state only when necessary
+- Focus solely on UI rendering and local interactions
+- Follow consistent file structure and naming conventions
+
+## Usage
+
+```bash
+turbo gen UIComponent
+```
+
+## Prompts
+
+You will be asked:
+
+- **Component Name**: The name of your component (required)
+  - Will be automatically formatted in appropriate cases (PascalCase, dash-case) where needed
+  - Example: entering "DataTable" or "data-table" will generate consistent file naming
+
+## Generated Files
+
+For a component named "ExampleComponent", the following files will be created:
+
+```
+
+packages/ui/src/example-component
+├── example-component.tsx # Main component file
+└── example-component.stories.tsx # Storybook documentation
+```
+
+## File Structure
+
+- **Component File** (`*.tsx`): Contains the main React component with TypeScript props interface
+- **Stories File** (`*.stories.tsx`): Contains Storybook documentation and examples
+
+## Best Practices
+
+- Use this generator for presentational components only
+- Keep business logic in container/parent components
+- Limit internal state to UI-specific concerns (e.g., hover states, accordion open/close)
+- Document props clearly in the TypeScript interface
+- Include relevant Storybook examples for component variations
+
+```
+
+```

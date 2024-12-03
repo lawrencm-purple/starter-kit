@@ -12,7 +12,7 @@ import { ZodError } from "zod";
 
 import type { Session } from "@com/auth";
 import { auth, validateToken } from "@com/auth";
-import { db } from "@com/db";
+import { db } from "@com/db"; 
 
 /**
  * Isomorphic Session getter for API requests

@@ -15,14 +15,17 @@
     "@auth/core": "catalog:next15",
     "@auth/prisma-adapter": "catalog:next15",
     "@com/db": "workspace:*",
+    "@t3-oss/env-nextjs": "^0.11.1",
     "next-auth": "catalog:next15",
-    "react": "catalog:react18"
+    "react": "catalog:react18",
+    "zod": "catalog:"
   },
   "exports": {
     ".": [
       "./src/index.ts",
       "./src/next-auth.d.ts"
-    ]
+    ],
+    "./env": "./env.ts"
   },
   "devDependencies": {
     "@com/tsconfig": "workspace:*",

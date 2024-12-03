@@ -38,6 +38,11 @@ module.exports = {
 "bg-destructive",
 "bg-destructive-foreground",
     "bg-ring",
+    'text-7xl',
+    'text-6xl',
+    'text-5xl',
+    'text-4xl',
+    
   "prose"]
   
 } 

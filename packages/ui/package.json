@@ -24,7 +24,8 @@
   },
   "exports": {
     ".": [
-      "./src/shadcn/components/ui/button.tsx"
+      "./src/shadcn/components/ui/button.tsx",
+      "./src/shadcn/components/**/*.tsx"
     ],
     "./utils": "./src/utils/utils.ts",
     "./theme": "./src/index.css"

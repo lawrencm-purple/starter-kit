@@ -1,6 +1,8 @@
 {
-    "compilerOptions": {
-     "moduleResolution": "bundler",
+  "extends": "@com/tsconfig/base.json",
+
+  "compilerOptions": {
+    "moduleResolution": "bundler",
     "module": "es2015",
     "jsx": "react",
     // ... other options
@@ -9,10 +11,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "src",
-    "stories",
-    ".storybook/**/*",
-    "*.ts"
-  ]
+  "include": ["src", "stories", ".storybook/**/*", "*.ts"],
+  "exclude": ["node_modules"]
 }

@@ -1,0 +1,113 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+
+<Meta title="Admin Portal/Go Live Checklist" />
+
+# Go Live Checklist
+
+### Performance & Build
+
+- [ ] Run Lighthouse audit and address critical issues
+- [ ] Run `next build` and verify no build errors
+- [ ] Test production build locally using `next start`
+- [ ] Verify all environment variables are properly set
+- [ ] Check bundle size and optimize if necessary
+
+### SEO & Metadata
+
+- [ ] Verify meta tags are present on all pages
+- [ ] Check robots.txt configuration
+- [ ] Verify sitemap.xml is generated and accessible
+- [ ] Ensure canonical URLs are properly set
+- [ ] Test Open Graph and Twitter card previews
+
+### Icons & Assets
+
+- [ ] Favicons, Apple Touch Icons, and other icons are in the correct folder, format and size - [Helper Extension](https://chromewebstore.google.com/detail/favicon-detector/jlfeffjhgmgblofcgpbgpkkhfniipejm?hl=en)
+- [ ] Verify all images have appropriate alt text
+- [ ] Check if images are optimized and using Next.js Image component
+- [ ] Ensure fonts are properly loaded and fallbacks are in place
+
+### Manifest Files
+
+- [ ] Make sure the manifest.json file is up to date [http://localhost:3000/manifest.webmanifest](http://localhost:3000/manifest.webmanifest)
+- [ ] Verify PWA configuration if applicable
+
+### Security
+
+- [ ] Enable and configure CSP headers
+- [ ] Verify CORS settings
+- [ ] Enable and test HTTPS
+- [ ] Check for exposed sensitive information
+- [ ] Verify authentication flows
+- [ ] Test rate limiting if applicable
+
+### Analytics & Monitoring
+
+- [ ] Set up error tracking (e.g., Sentry)
+- [ ] Configure analytics (e.g., Google Analytics)
+- [ ] Set up performance monitoring
+- [ ] Verify logging is properly configured
+
+### Testing
+
+- [ ] Run all unit tests
+- [ ] Complete end-to-end testing
+- [ ] Test on multiple browsers
+- [ ] Test on multiple devices
+- [ ] Verify all forms and user interactions
+- [ ] Check all API endpoints
+- [ ] Test error boundaries and fallback UI
+- [ ] Verify 404 and 500 error pages
+
+### Accessibility
+
+- [ ] Run accessibility audit
+- [ ] Test keyboard navigation
+- [ ] Verify ARIA labels
+- [ ] Check color contrast
+- [ ] Test with screen readers
+
+### Content & UI
+
+- [ ] Proofread all content
+- [ ] Check for broken links
+- [ ] Verify all external links open in new tabs
+- [ ] Test responsive design on all breakpoints
+- [ ] Verify loading states and animations
+- [ ] Check form validation messages
+
+### Performance Optimization
+
+- [ ] Enable caching where appropriate
+- [ ] Verify API response times
+- [ ] Check and optimize database queries
+- [ ] Test CDN configuration
+- [ ] Verify static page generation
+- [ ] Check ISR/SSR configuration
+
+### Deployment
+
+- [ ] Update DNS settings
+- [ ] Configure redirects
+- [ ] Set up CI/CD pipeline
+- [ ] Configure backup strategy
+- [ ] Test rollback procedures
+- [ ] Verify SSL certificate
+- [ ] Set up monitoring alerts
+
+### Legal & Compliance
+
+- [ ] Privacy policy is up to date
+- [ ] Terms of service are accessible
+- [ ] Cookie consent is implemented
+- [ ] GDPR/CCPA compliance verified
+- [ ] Accessibility statement is present
+
+### Post-Launch
+
+- [ ] Monitor error logs
+- [ ] Watch performance metrics
+- [ ] Check analytics data
+- [ ] Verify backup systems
+- [ ] Test contact forms
+- [ ] Verify email notifications

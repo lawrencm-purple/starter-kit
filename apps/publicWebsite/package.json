@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "next build",
+    "xxbuild": "next build",
     "check": "next lint && tsc --noEmit",
     "dev": "next dev  --port 4000 --turbo ",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",

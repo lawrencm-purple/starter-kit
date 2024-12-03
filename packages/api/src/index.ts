@@ -19,7 +19,7 @@ const createCaller = createCallerFactory(appRouter);
  * type PostByIdInput = RouterInputs['post']['byId']
  *      ^? { id: number }
  **/
-type RouterInputs = inferRouterInputs<AppRouter>;
+type RouterInputs = inferRouterInputs<AppRouter>; 
 
 /**
  * Inference helpers for output types

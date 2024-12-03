@@ -97,6 +97,9 @@ catalogs:
     react:
       specifier: ^18.3.1
       version: 18.3.1
+    react-dom:
+      specifier: ^18.3.1
+      version: 18.3.1
   tailwindcss:
     '@tailwindcss/typography':
       specifier: ^0.5.15
@@ -213,6 +216,9 @@ importers:
       '@com/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/tsconfig
+      '@storybook/blocks':
+        specifier: ^8.4.5
+        version: 8.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.5(prettier@3.4.1))
       '@types/eslint':
         specifier: 'catalog:'
         version: 8.56.12
@@ -231,6 +237,9 @@ importers:
       eslint-config-next:
         specifier: catalog:next15
         version: 15.0.3(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2)
+      jiti:
+        specifier: ^1.21.6
+        version: 1.21.6
       postcss:
         specifier: catalog:tailwindcss
         version: 8.4.49
@@ -371,19 +380,19 @@ importers:
         specifier: ^0.462.0
         version: 0.462.0(react@18.3.1)
       react:
-        specifier: ^18.3.1
+        specifier: catalog:react18
         version: 18.3.1
       react-dom:
-        specifier: ^18.3.1
+        specifier: catalog:react18
         version: 18.3.1(react@18.3.1)
       storybook-theme-switch-addon:
         specifier: ^1.0.1
         version: 1.0.1(@storybook/blocks@8.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.5(prettier@3.4.1)))(@storybook/components@8.4.5(storybook@8.4.5(prettier@3.4.1)))(@storybook/core-events@8.4.5(storybook@8.4.5(prettier@3.4.1)))(@storybook/manager-api@8.4.5(storybook@8.4.5(prettier@3.4.1)))(@storybook/preview-api@8.4.5(storybook@8.4.5(prettier@3.4.1)))(@storybook/theming@8.4.5(storybook@8.4.5(prettier@3.4.1)))(@storybook/types@8.4.5(storybook@8.4.5(prettier@3.4.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.5(prettier@3.4.1))
       tailwind-merge:
-        specifier: ^2.5.5
+        specifier: catalog:tailwindcss
         version: 2.5.5
       tailwindcss-animate:
-        specifier: ^1.0.7
+        specifier: catalog:tailwindcss
         version: 1.0.7(tailwindcss@3.4.15(ts-node@10.9.2(@types/node@20.17.8)(typescript@5.7.2)))
     devDependencies:
       '@chromatic-com/storybook':
@@ -395,6 +404,9 @@ importers:
       '@com/tailwind':
         specifier: workspace:*
         version: link:../../tooling/tailwind
+      '@com/tsconfig':
+        specifier: workspace:*
+        version: link:../../tooling/tsconfig
       '@eslint/js':
         specifier: ^9.15.0
         version: 9.15.0
@@ -423,13 +435,13 @@ importers:
         specifier: ^8.4.5
         version: 8.4.5(storybook@8.4.5(prettier@3.4.1))
       '@tailwindcss/typography':
-        specifier: ^0.5.15
+        specifier: catalog:tailwindcss
         version: 0.5.15(tailwindcss@3.4.15(ts-node@10.9.2(@types/node@20.17.8)(typescript@5.7.2)))
       '@types/react':
-        specifier: ^18.3.3
+        specifier: catalog:react18
         version: 18.3.12
       '@types/react-dom':
-        specifier: ^18.3.1
+        specifier: catalog:react18
         version: 18.3.1
       '@vitejs/plugin-react':
         specifier: ^4.3.4
@@ -438,7 +450,7 @@ importers:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.49)
       eslint:
-        specifier: ^9.15.0
+        specifier: 'catalog:'
         version: 9.15.0(jiti@1.21.6)
       eslint-plugin-react-hooks:
         specifier: ^5.0.0
@@ -456,13 +468,13 @@ importers:
         specifier: ^8.4.5
         version: 8.4.5(prettier@3.4.1)
       tailwindcss:
-        specifier: ^3.4.15
+        specifier: catalog:tailwindcss
         version: 3.4.15(ts-node@10.9.2(@types/node@20.17.8)(typescript@5.7.2))
       typescript:
-        specifier: ^5.6.2
+        specifier: 'catalog:'
         version: 5.7.2
       typescript-eslint:
-        specifier: ^8.15.0
+        specifier: 'catalog:'
         version: 8.16.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2)
       vite:
         specifier: ^6.0.1
@@ -519,12 +531,18 @@ importers:
       '@com/db':
         specifier: workspace:*
         version: link:../db
+      '@t3-oss/env-nextjs':
+        specifier: ^0.11.1
+        version: 0.11.1(typescript@5.7.2)(zod@3.23.8)
       next-auth:
         specifier: catalog:next15
         version: 5.0.0-beta.25(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       react:
         specifier: catalog:react18
         version: 18.3.1
+      zod:
+        specifier: 'catalog:'
+        version: 3.23.8
     devDependencies:
       '@com/tsconfig':
         specifier: workspace:*
@@ -1688,8 +1706,8 @@ packages:
       storybook: ^8.4.5
       vite: ^4.0.0 || ^5.0.0
 
-  '@storybook/client-logger@8.5.0-alpha.14':
-    resolution: {integrity: sha512-sJMYDKrb08S8vuvcwvuxvdEdXdSdnEzTABE6hSvx9dg0rHtZB5V8PB4dObMzm1TeN7vMgCNvGdZeNE+JCC9OVw==}
+  '@storybook/client-logger@8.5.0-alpha.15':
+    resolution: {integrity: sha512-tw7Vb/hULYb7Hmg5S7zuQkRqPI7USH6Xm0m0FfCJU9lN2RvVdQdeecCJjw92GZf/FMpQ2Uoga/zaw6MGav9eCA==}
     peerDependencies:
       storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
 
@@ -1805,8 +1823,26 @@ packages:
       typescript:
         optional: true
 
+  '@t3-oss/env-core@0.11.1':
+    resolution: {integrity: sha512-MaxOwEoG1ntCFoKJsS7nqwgcxLW1SJw238AJwfJeaz3P/8GtkxXZsPPolsz1AdYvUTbe3XvqZ/VCdfjt+3zmKw==}
+    peerDependencies:
+      typescript: '>=5.0.0'
+      zod: ^3.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   '@t3-oss/env-nextjs@0.10.1':
     resolution: {integrity: sha512-iy2qqJLnFh1RjEWno2ZeyTu0ufomkXruUsOZludzDIroUabVvHsrSjtkHqwHp1/pgPUzN3yBRHMILW162X7x2Q==}
+    peerDependencies:
+      typescript: '>=5.0.0'
+      zod: ^3.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
+  '@t3-oss/env-nextjs@0.11.1':
+    resolution: {integrity: sha512-rx2XL9+v6wtOqLNJbD5eD8OezKlQD1BtC0WvvtHwBgK66jnF5+wGqtgkKK4Ygie1LVmoDClths2T4tdFmRvGrQ==}
     peerDependencies:
       typescript: '>=5.0.0'
       zod: ^3.0.0
@@ -5480,7 +5516,7 @@ snapshots:
       ts-dedent: 2.2.0
       vite: 6.0.1(@types/node@20.17.8)(jiti@1.21.6)(less@4.2.1)(terser@5.36.0)(yaml@2.6.1)
 
-  '@storybook/client-logger@8.5.0-alpha.14(storybook@8.4.5(prettier@3.4.1))':
+  '@storybook/client-logger@8.5.0-alpha.15(storybook@8.4.5(prettier@3.4.1))':
     dependencies:
       storybook: 8.4.5(prettier@3.4.1)
 
@@ -5616,9 +5652,22 @@ snapshots:
     optionalDependencies:
       typescript: 5.7.2
 
+  '@t3-oss/env-core@0.11.1(typescript@5.7.2)(zod@3.23.8)':
+    dependencies:
+      zod: 3.23.8
+    optionalDependencies:
+      typescript: 5.7.2
+
   '@t3-oss/env-nextjs@0.10.1(typescript@5.7.2)(zod@3.23.8)':
     dependencies:
       '@t3-oss/env-core': 0.10.1(typescript@5.7.2)(zod@3.23.8)
+      zod: 3.23.8
+    optionalDependencies:
+      typescript: 5.7.2
+
+  '@t3-oss/env-nextjs@0.11.1(typescript@5.7.2)(zod@3.23.8)':
+    dependencies:
+      '@t3-oss/env-core': 0.11.1(typescript@5.7.2)(zod@3.23.8)
       zod: 3.23.8
     optionalDependencies:
       typescript: 5.7.2
@@ -8263,7 +8312,7 @@ snapshots:
   storybook-theme-switch-addon@1.0.1(@storybook/blocks@8.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.5(prettier@3.4.1)))(@storybook/components@8.4.5(storybook@8.4.5(prettier@3.4.1)))(@storybook/core-events@8.4.5(storybook@8.4.5(prettier@3.4.1)))(@storybook/manager-api@8.4.5(storybook@8.4.5(prettier@3.4.1)))(@storybook/preview-api@8.4.5(storybook@8.4.5(prettier@3.4.1)))(@storybook/theming@8.4.5(storybook@8.4.5(prettier@3.4.1)))(@storybook/types@8.4.5(storybook@8.4.5(prettier@3.4.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.5(prettier@3.4.1)):
     dependencies:
       '@storybook/blocks': 8.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.5(prettier@3.4.1))
-      '@storybook/client-logger': 8.5.0-alpha.14(storybook@8.4.5(prettier@3.4.1))
+      '@storybook/client-logger': 8.5.0-alpha.15(storybook@8.4.5(prettier@3.4.1))
       '@storybook/components': 8.4.5(storybook@8.4.5(prettier@3.4.1))
       '@storybook/core-events': 8.4.5(storybook@8.4.5(prettier@3.4.1))
       '@storybook/icons': 1.2.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)

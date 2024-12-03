@@ -34,8 +34,8 @@ export declare const postRouter: import("@trpc/server/unstable-core-do-not-impor
             name: string;
         };
         output: {
-            id: number;
             name: string;
+            id: number;
             createdAt: Date;
             updatedAt: Date;
             createdById: string;
@@ -44,8 +44,8 @@ export declare const postRouter: import("@trpc/server/unstable-core-do-not-impor
     getLatest: import("@trpc/server").TRPCQueryProcedure<{
         input: void;
         output: {
-            id: number;
             name: string;
+            id: number;
             createdAt: Date;
             updatedAt: Date;
             createdById: string;

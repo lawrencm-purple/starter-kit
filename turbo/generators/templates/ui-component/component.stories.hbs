@@ -1,0 +1,28 @@
+import type { Meta, StoryObj } from "@storybook/react";
+import { expect, within } from "@storybook/test";
+import {{pascalCase name}} from "./{{dashCase name}}";
+import React from "react";
+
+const meta = {
+  title: "Components/{{pascalCase name}}",
+  component: {{pascalCase name}},
+  parameters: {
+    layout: "centered",
+  },
+  tags: ["autodocs"],
+} satisfies Meta<typeof {{pascalCase name}}>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {},
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    // Verify default text is rendered
+    const defaultText = await canvas.findByText("{{pascalCase name}}");
+    expect(defaultText).toBeInTheDocument();
+  },
+};
+

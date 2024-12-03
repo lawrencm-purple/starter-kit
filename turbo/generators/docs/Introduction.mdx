@@ -1,0 +1,34 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Dev Tools/Generators/Introduction" />
+
+# Introduction
+
+Turbo Generators are powerful tools that help automate code generation tasks in your repository. They are built into Turborepo and provide a way to scaffold new code, create consistent file structures, and maintain development standards across your project.
+
+## What are Turbo Generators?
+
+Turbo Generators allow you to:
+
+- Create custom templates for components, pages, or any code structures
+- Maintain consistency across your codebase
+- Speed up development by automating repetitive tasks
+- Enforce best practices and coding standards
+
+## Using Generators
+
+You can run generators using the `turbo gen` command. For example:
+
+```bash
+turbo gen
+```
+
+This will show you a list of available generators in your repository. You can also run a specific generator directly:
+
+```bash
+turbo gen <generator-name>
+```
+
+## Creating Generators
+
+You can create your own generators by adding a new script to your config file. See the templates/config.ts file for examples.
