@@ -1,0 +1,31 @@
+{
+  "name": "@com/storyblok",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "generate": "cd ./src/types && storyblok pull-components --space 3000815  && storyblok generate-typescript-typedefs --source ./components.3000815.json  ",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "dev": "tsc",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "dependencies": {
+    "@com/ui": "workspace:*",
+    "@storyblok/react": "catalog:storyblok",
+    "react": "catalog:react18"
+  },
+  "devDependencies": {
+    "@com/tsconfig": "workspace:*",
+    "@types/react": "catalog:react18"
+  },
+  "exports": {
+    ".": [
+      "./src/storyblok.ts"
+    ],
+    "./provider": "./src/storyblok-provider.tsx",
+    "./types": "./src/types/*.ts",
+    "./definitions": "./src/types/*.json"
+  }
+}

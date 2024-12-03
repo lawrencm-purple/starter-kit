@@ -1,0 +1,1 @@
+{"version":3,"file":"feature-view-model.d.ts","sourceRoot":"","sources":["../../../../src/view-models/components/feature/feature-view-model.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAC1B,OAAO,EAAE,gBAAgB,EAAiB,MAAM,0CAA0C,CAAC;AAG3F,KAAK,qBAAqB,GAAG;IAC3B,IAAI,EAAE,gBAAgB,CAAC;CACxB,CAAC;AAEF,QAAA,MAAM,gBAAgB,aAAc,qBAAqB,sBAExD,CAAC;AAEF,eAAe,gBAAgB,CAAC"}

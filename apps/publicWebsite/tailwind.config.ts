@@ -6,8 +6,9 @@ import baseConfig from "@com/tailwind";
 
 export default {
   content: Array.isArray(baseConfig.config.content) 
-    ? [...baseConfig.config.content, "../../packages/ui/src/*.{ts,tsx}"]
-    : ["./src/**/*.{ts,tsx}", "../../packages/ui/src/*.{ts,tsx}"],
+    ? [...baseConfig.config.content, "../../packages/ui/src/**/*.{ts,tsx}", "./../../packages/storyblok/src/**/*.{ts,tsx}"]
+    : ["./src/**/*.{ts,tsx}", "../../packages/ui/src/**/*.{ts,tsx}", "./../../packages/storyblok/src/**/*.{ts,tsx}"],
+  
   presets: [baseConfig.config],
   theme: {
     extend: {

@@ -31,5 +31,6 @@
     "react": "catalog:react18",
     "turbo": "^2.3.1",
     "typescript": "catalog:"
-  }
+  },
+  "prettier": "@com/prettier-config"
 }

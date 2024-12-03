@@ -1,8 +1,11 @@
 import { PlopTypes } from "@turbo/gen";
 
+import sbTypes from "../../packages/storyblok/src/types/components.3000815.json";
+
 export default function generator(plop: PlopTypes.NodePlopAPI): void {
   plop.setGenerator("UIComponent", {
-    description: "Create a new presentational UI component (dumb component with internal state only)",
+    description:
+      "Create a new presentational UI component (dumb component with internal state only)",
     prompts: [
       {
         type: "input",
@@ -30,8 +33,64 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
     ],
   });
 
+  plop.setGenerator("StoryblokViewModel", {
+    description: "Create a new Storyblok view model component",
+    prompts: [
+      {
+        type: "list",
+        name: "StoryblokComponent",
+        message: "What is the name of the Storyblok component?",
+        choices: () => sbTypes.components.map((component) => component.name),
+      },
+      {
+        type: "list",
+        name: "type",
+        message: "What is the type of Storyblok component?",
+        choices: ["Page", "Component"],
+      },
+    ],
+
+    actions: function (data) {
+      var actions = [];
+
+      if (data?.type === "Component") {
+        actions.push({
+          type: "add",
+          path: "{{ turbo.paths.root }}/packages/storyblok/src/view-models/components/{{ dashCase StoryblokComponent }}/{{ dashCase StoryblokComponent }}-view-model.tsx",
+          templateFile:
+            "templates/storyblok-view-model/component-view-model.tsx.hbs",
+        });
+      }
+      if (data?.type === "Page") {
+        actions.push({
+          type: "add",
+          path: "{{ turbo.paths.root }}/packages/storyblok/src/view-models/pages/{{ dashCase StoryblokComponent }}/{{ dashCase StoryblokComponent }}-view-model.tsx",
+          templateFile:
+            "templates/storyblok-view-model/page-view-model.tsx.hbs",
+        });
+      }
+
+      actions.push({
+        type: "modify",
+        path: "../../packages/storyblok/src/storyblok.ts",
+        pattern: /(import.*?from.*?\n)(?=\n|import)/,
+        templateFile: "templates/storyblok-view-model/import.hbs",
+      });
+      // Add to components object
+      actions.push({
+        type: "modify",
+        path: "../../packages/storyblok/src/storyblok.ts",
+        pattern: /(components: {[\s\S]*?)(})/,
+        templateFile: "templates/storyblok-view-model/component.hbs",
+      });
+
+      return actions;
+    },
+  });
+
   plop.setGenerator("example", {
-    description: "An example Turborepo generator - creates a new file at the root of the project",
+    description:
+      "An example Turborepo generator - creates a new file at the root of the project",
     prompts: [
       {
         type: "input",
