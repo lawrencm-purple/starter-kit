@@ -1,0 +1,50 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Dev Tools/Generate Storybook Type Definitions" />
+
+<div className="prose">
+
+# Storybook Type Definitions
+
+## Overview
+
+Storybook Type Definitions are a set of TypeScript interfaces that define the structure of Storybook stories. They provide a clear contract for the data that components expect and help ensure that stories are consistent and well-documented.
+
+## Usage
+
+a task has been setup to generate the types for the stories in /packages/storybook/package.json called generate. Ity can be triggerd by using
+
+```bash
+
+    turbo generateStoryblok
+```
+
+Alternativle you can use this cmd doit manually
+
+```bash
+
+    cd /packages/storyblok/src/types
+
+storyblok pull-components --space 3000815
+
+storyblok generate-typescript-typedefs --source ./components.3000815.json
+```
+
+## Purpose
+
+Type definitions serve as a contract between the component and the story. They:
+
+- **Ensure Consistency**: By defining a standard structure, they reduce discrepancies across different stories.
+- **Improve Documentation**: Provide clear schema for what props a component expects, enhancing code readability and maintainability.
+- **Enable Type Safety**: Catch potential errors early by enforcing type checks during development.
+- **Facilitate Collaboration**: By having a common reference, team members can collaborate more efficiently without ambiguity.
+
+## Benefits
+
+Utilizing TypeScript with Storybook adds several benefits:
+
+1. **Static Typing**: Detects errors during compile-time rather than runtime, reducing bug incidence.
+2. **Enhanced Editor Support**: Code editors offer better auto-completion and error checking with defined types.
+3. **Self-Documenting Code**: Types act as documentation for developers who read the code later.
+
+</div>

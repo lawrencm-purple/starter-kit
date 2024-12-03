@@ -1,19 +1,18 @@
 // import { LatestPost } from "./_components/post";
-import { HydrateClient } from "../trpc/server";
 import { getStoryblokApi } from "@com/storyblok";
-import { StoryblokStory } from '@storyblok/react/rsc';
+import { StoryblokStory } from "@storyblok/react/rsc";
+
+import { HydrateClient } from "../trpc/server";
 
 export default async function Home() {
-
-    const { data } = await fetchData();
-
+  const { data } = await fetchData();
 
   return (
     <HydrateClient>
-      <main className="flex min-h-screen flex-col items-center justify-center bg-slate-100 w-full">
+      <main className="flex min-h-screen w-full flex-col items-center justify-center bg-slate-100">
         <div className="container mx-auto">
           <StoryblokStory story={data.story} />
-          </div>
+        </div>
         {/* <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
           <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
             Public Website
@@ -24,8 +23,7 @@ export default async function Home() {
   );
 }
 
-
 export async function fetchData() {
   const storyblokApi = getStoryblokApi();
-  return storyblokApi.get('cdn/stories/home', { version: 'draft' });
+  return storyblokApi.get("cdn/stories/home", { version: "draft" });
 }

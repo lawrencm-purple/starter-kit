@@ -46,7 +46,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         type: "list",
         name: "type",
         message: "What is the type of Storyblok component?",
-        choices: ["Page", "Component"],
+        choices: ["Component", "Page"],
       },
     ],
 
@@ -72,14 +72,15 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
 
       actions.push({
         type: "modify",
-        path: "../../packages/storyblok/src/storyblok.ts",
-        pattern: /(import.*?from.*?\n)(?=\n|import)/,
+        path: "{{ turbo.paths.root }}/packages/storyblok/src/storyblok.ts",
+
+        pattern: /(import.*?\n(?:import.*?\n)*)/,
         templateFile: "templates/storyblok-view-model/import.hbs",
       });
       // Add to components object
       actions.push({
         type: "modify",
-        path: "../../packages/storyblok/src/storyblok.ts",
+        path: "{{ turbo.paths.root }}/packages/storyblok/src/storyblok.ts",
         pattern: /(components: {[\s\S]*?)(})/,
         templateFile: "templates/storyblok-view-model/component.hbs",
       });

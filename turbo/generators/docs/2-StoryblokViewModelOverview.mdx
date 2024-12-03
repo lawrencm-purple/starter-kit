@@ -1,0 +1,63 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Dev Tools/Storyblok View Model" />
+
+# Storyblok View Models Architecture
+
+## Overview
+
+The View Model pattern implemented in this project creates a clear separation between Storyblok's content structure and the presentational components. This architecture follows the Single Responsibility Principle by isolating content mapping logic from UI rendering.
+
+## Purpose
+
+View Models serve as intermediary adapters between Storyblok's content delivery API and our presentational components. They:
+
+- Transform raw Storyblok data into clean, typed interfaces
+- Handle content-specific business logic
+- Protect presentational components from Storyblok-specific implementation details
+- Make components more reusable and testable
+
+## Implementation Guidelines
+
+View Models Should:
+
+- Map Storyblok fields to strongly-typed interfaces
+- Handle content-specific transformations and calculations
+- Manage Storyblok-specific properties and nested structures
+- Provide clean data contracts for presentational components
+- Be responsible for any content model versioning or migrations
+
+## View Models Should Not:
+
+- Contain excessive UI/JSX code (offload to the presentational component where possible)
+- Handle visual styling or layout where possible ( (offload to the presentational component where possible))
+- Manage component state (have to thik about this one)
+- Make API calls (beyond those required for content resolution)
+- Include presentation-specific logic (where posisble)
+
+## Benefits
+
+- Maintainability: Changes to Storyblok's content structure only require updates to view models
+- Testability: View models and components can be tested in isolation
+- Type Safety: Strong typing throughout the content pipeline
+- Reusability: Components remain framework-agnostic and can be used with different CMSs
+- Separation of Concerns: Clear boundaries between content and presentation logic
+
+## Best Practices
+
+- Use the generated interfaces for input (Storyblok) - use the CLI generator
+- Create a custom interface for output (component) data
+- Use meaningful naming that reflects the business domain
+- Keep transformation logic pure and predictable
+- Document any complex content transformations
+- Version view models when making breaking changes to content structure
+
+## Development Workflow
+
+- Define the content structure in Storyblok
+- generate the SB types using the cmd line or defined task
+- Create/update the corresponding view model
+- Develop the presentational component using the view model's interface
+- Write tests for both view model and component separately
+
+** Remember: View Models are the bridge between your CMS and your UI. They should make your components cleaner and your content logic more maintainable. **

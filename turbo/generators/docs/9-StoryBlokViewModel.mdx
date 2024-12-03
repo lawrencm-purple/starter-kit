@@ -1,0 +1,97 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Dev Tools/Generators/Storyblok View Model" />
+
+# Storyblok View Model Generator
+
+The Storyblok View Model Generator is a utility that automates the creation of view model components for Storyblok integration in your project. It uses Plop.js to scaffold new components and automatically wire them into your Storyblok configuration.
+
+## Overview
+
+This generator:
+
+- Creates view model components for both Page and Component types
+- Automatically adds imports to your Storyblok configuration
+- Registers components in the Storyblok components registry
+- Maintains consistent file structure and naming conventions
+
+## Usage
+
+```bash
+turbo gen StoryblokViewModel
+```
+
+You'll be prompted to:
+
+- Select a Storyblok component from existing components
+- Choose the type (Page or Component)
+
+## Generated Structure
+
+### For Components
+
+```
+packages/storyblok/src/view-models/components/
+└── your-component/
+└── your-component-view-model.tsx
+```
+
+### For Pages
+
+```
+packages/storyblok/src/view-models/pages/
+└── your-page/
+└── your-page-view-model.tsx
+
+```
+
+## What Gets Generated
+
+1. **View Model File**:
+
+   - Creates a TypeScript React component
+   - Includes proper typing from Storyblok schemas
+   - Uses consistent naming conventions
+
+2. **Storyblok Configuration Updates**:
+   - Adds import statement to `storyblok.ts`
+   - Registers component in the components registry
+
+## Technical Details
+
+The generator uses several Plop.js actions:
+
+- `add`: Creates new files from templates
+- `modify`: Updates existing files with new imports and component registrations
+
+### File Paths
+
+- Components: `packages/storyblok/src/view-models/components/<name>/<name>-view-model.tsx`
+- Pages: `packages/storyblok/src/view-models/pages/<name>/<name>-view-model.tsx`
+
+### Templates
+
+The generator uses Handlebars templates located in:
+
+- `templates/storyblok-view-model/component-view-model.tsx.hbs`
+- `templates/storyblok-view-model/page-view-model.tsx.hbs`
+- `templates/storyblok-view-model/import.hbs`
+- `templates/storyblok-view-model/component.hbs`
+
+## Best Practices
+
+1. Always use the generator to create new Storyblok components
+2. Don't modify the generated import statements manually
+3. Keep component names consistent with Storyblok schema names
+
+## Troubleshooting
+
+If you encounter issues:
+
+1. Ensure your Storyblok component exists in the schema. If not runn the generate task in packages/storyblok
+2. Verify that `storyblok.ts` is not malformed
+
+## Related
+
+- [Storyblok Documentation](https://www.storyblok.com/docs)
+- [Plop.js Documentation](https://plopjs.com/)

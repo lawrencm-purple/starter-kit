@@ -1,4 +1,5 @@
 import React from "react";
+import { storyblokEditable } from "@storyblok/react";
 import { {{pascalCase StoryblokComponent}}Storyblok } from "../../../types/storyblok-component-types";
 
 
@@ -7,7 +8,7 @@ type {{pascalCase StoryblokComponent}}ViewModelProps = {
 };
 
 const {{pascalCase StoryblokComponent}}ViewModel = ({ blok }: {{pascalCase StoryblokComponent}}ViewModelProps) => { 
-  return  (<div>{{pascalCase StoryblokComponent}}</div>)
+  return  (<div {...storyblokEditable(blok)}>{{pascalCase StoryblokComponent}}</div>)
 };
 
 export default {{pascalCase StoryblokComponent}}ViewModel  

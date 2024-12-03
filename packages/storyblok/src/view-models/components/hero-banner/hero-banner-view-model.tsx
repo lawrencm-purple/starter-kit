@@ -1,4 +1,5 @@
 import React from "react";
+import { storyblokEditable } from "@storyblok/react";
 
 import { HeroBannerStoryblok } from "../../../types/storyblok-component-types";
 
@@ -7,7 +8,7 @@ type HeroBannerViewModelProps = {
 };
 
 const HeroBannerViewModel = ({ blok }: HeroBannerViewModelProps) => {
-  return <div>HeroBanner</div>;
+  return <div {...storyblokEditable(blok)}>HeroBanner</div>;
 };
 
 export default HeroBannerViewModel;
