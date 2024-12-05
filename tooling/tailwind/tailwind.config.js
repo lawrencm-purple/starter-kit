@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-const config =  {
+
+const config = {
   darkMode: ["class"],
   content: [
-    
     "./src/**/*.{js,jsx,ts,tsx,mdx}",
     "./stories/**/*.{js,jsx,ts,tsx,mdx}",
     "./.storybook/**/*.{js,jsx,ts,tsx,mdx}",
@@ -12,19 +12,17 @@ const config =  {
   theme: {
     extend: {
       colors: {
-
-      transparent: 'transparent',
-      current: 'currentColor',
-      'white': '#ffffff',
-      'purple': '#3f3cbb',
-      'midnight': '#121063',
-      'metal': '#565584',
-      'tahiti': '#3ab7bf',
-      'silver': '#ecebff',
-      'bubble-gum': '#ff77e9',
-      'bermuda': '#78dcca',
-      'red': '#ff0000',
-
+        transparent: "transparent",
+        current: "currentColor",
+        white: "#ffffff",
+        purple: "#3f3cbb",
+        midnight: "#121063",
+        metal: "#565584",
+        tahiti: "#3ab7bf",
+        silver: "#ecebff",
+        "bubble-gum": "#ff77e9",
+        bermuda: "#78dcca",
+        red: "#ff0000",
 
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -59,22 +57,22 @@ const config =  {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        
       },
-      
+
       borderRadius: {
         lg: `var(--radius)`,
         md: `calc(var(--radius) - 2px)`,
         sm: "calc(var(--radius) - 4px)",
       },
+
+      textShadow: {
+        sm: "0 1px 2px var(--tw-shadow-color)",
+        DEFAULT: "0 2px 4px rgb(var(--tw-shadow-color))",
+        lg: "0 8px 16px var(--tw-shadow-color)",
+      },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require('@tailwindcss/typography'),
-  ],
- 
-  
-}
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+};
 
-export default { config }
+export default { config };
