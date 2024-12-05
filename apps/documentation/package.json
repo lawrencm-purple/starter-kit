@@ -1,0 +1,32 @@
+{
+  "name": "documentation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.2",
+    "@com/prettier-config": "workspace:*",
+    "@com/tailwind": "workspace:*",
+    "@com/tsconfig": "workspace:*",
+    "@storybook/addon-essentials": "^8.4.6",
+    "@storybook/addon-interactions": "^8.4.6",
+    "@storybook/addon-onboarding": "^8.4.6",
+    "@storybook/blocks": "^8.4.6",
+    "@storybook/nextjs": "^8.4.6",
+    "@storybook/react": "^8.4.6",
+    "@storybook/test": "^8.4.6",
+    "storybook": "^8.4.6",
+    "tailwind-merge": "catalog:tailwindcss",
+    "tailwindcss": "catalog:tailwindcss",
+    "tailwindcss-animate": "catalog:tailwindcss"
+  },
+  "prettier": "@com/prettier-config"
+}

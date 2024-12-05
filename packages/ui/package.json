@@ -14,7 +14,7 @@
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.0",
-    "@storybook/test": "^8.4.5",
+    "@storybook/test": "catalog:storybook",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.0.0",
     "lucide-react": "^0.462.0",
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@com/tsconfig": "workspace:*",
-    "@storybook/react": "^8.4.5",
+    "@storybook/react": "catalog:storybook",
     "@types/react": "catalog:react18",
     "tailwindcss": "catalog:tailwindcss"
   }
