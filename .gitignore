@@ -58,3 +58,6 @@ apps/nextjs/.next/
 **/.cache
 
 *storybook.log
+packages/ui/dist/
+packages/api/dist/
+packages/**/dist/

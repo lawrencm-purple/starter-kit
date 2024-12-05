@@ -1,1 +1,0 @@
-{"version":3,"file":"grid-view-model.d.ts","sourceRoot":"","sources":["../../../../src/view-models/components/grid/grid-view-model.tsx"],"names":[],"mappings":"AACA,OAAO,EAAE,aAAa,EAAE,MAAM,0CAA0C,CAAC;AAGzE,KAAK,kBAAkB,GAAG;IACxB,IAAI,EAAE,aAAa,CAAC;CACrB,CAAC;AAEF,QAAA,MAAM,aAAa,aAAc,kBAAkB,4CAUlD,CAAC;AAEF,eAAe,aAAa,CAAC"}

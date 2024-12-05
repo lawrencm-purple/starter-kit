@@ -1,7 +1,9 @@
 import "../styles/globals.css";
 
-import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
+import { GeistSans } from "geist/font/sans";
+
+import { CounterStoreProvider } from "~/stores/counter-store-provider";
 import { TRPCReactProvider } from "../trpc/react";
 
 export const metadata: Metadata = {
@@ -10,32 +12,41 @@ export const metadata: Metadata = {
   appleWebApp: {
     title: "Create T3 App",
     statusBarStyle: "default",
-    startupImage: "/apple-touch-icon.png"
+    startupImage: "/apple-touch-icon.png",
   },
-  icons: [{
-    rel: "icon", url: "/favicon.ico",
-    
-  },
-    { 
-      rel: "icon", url: "/favicon.ico", sizes: "any"
+  icons: [
+    {
+      rel: "icon",
+      url: "/favicon.ico",
     },
     {
-      rel: "icon", url: "/favicon.svg", sizes: "any", type: "image/svg+xml"
+      rel: "icon",
+      url: "/favicon.ico",
+      sizes: "any",
     },
     {
-      rel: "apple-touch-icon", url: "/apple-touch-icon.png", sizes: "any", type: "image/svg+xml"
-    }
+      rel: "icon",
+      url: "/favicon.svg",
+      sizes: "any",
+      type: "image/svg+xml",
+    },
+    {
+      rel: "apple-touch-icon",
+      url: "/apple-touch-icon.png",
+      sizes: "any",
+      type: "image/svg+xml",
+    },
   ],
 };
 
 // For viewport configuration, create a separate export
 export const viewport = {
-  themeColor: '#2563EB',
-  colorScheme: 'light',
-  viewportFit: 'cover',
-  width: 'device-width',
+  themeColor: "#2563EB",
+  colorScheme: "light",
+  viewportFit: "cover",
+  width: "device-width",
   initialScale: 1,
-}
+};
 
 export default function RootLayout({
   children,
@@ -43,7 +54,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
       <body>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <CounterStoreProvider>
+          <TRPCReactProvider>{children}</TRPCReactProvider>
+        </CounterStoreProvider>
       </body>
     </html>
   );

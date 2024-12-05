@@ -33,7 +33,8 @@
     "next-auth": "catalog:next15",
     "server-only": "catalog:next15",
     "superjson": "catalog:",
-    "zod": "catalog:"
+    "zod": "catalog:",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@com/prettier-config": "workspace:*",

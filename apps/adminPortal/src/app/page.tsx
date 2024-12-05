@@ -1,16 +1,18 @@
-import Link from "next/link";
-
-// import { LatestPost } from "./_components/post";
-import { auth } from "@com/auth";
-import { api, HydrateClient } from "../trpc/server";
-import { LatestPost } from "./_components/post";
 import { Metadata } from "next";
 import Head from "next/head";
+import Link from "next/link";
+// import { LatestPost } from "./_components/post";
+import { auth } from "@com/auth";
+
+import { useCounterStore } from "~/stores/counter-store-provider";
+import { api, HydrateClient } from "../trpc/server";
+import CountActions from "./_components/CountActions";
+import { LatestPost } from "./_components/post";
+import StateTest from "./_components/test";
 
 export const metadata: Metadata = {
   title: "A differnet title",
-}
-
+};
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from tRPC xxxx" });
@@ -19,20 +21,21 @@ export default async function Home() {
   console.log("SESSION", session);
 
   if (session?.user) {
-    void api.post.getLatest.prefetch(); 
+    void api.post.getLatest.prefetch();
   }
 
   return (
     <HydrateClient>
-
-
-
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-        
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
           <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
             Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
           </h1>
+
+          <StateTest />
+
+          <CountActions />
+
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
             <Link
               className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20"
