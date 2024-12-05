@@ -1,0 +1,35 @@
+import {
+  Canvas,
+  ColorItem,
+  ColorPalette,
+  Meta,
+  Story,
+} from "@storybook/blocks";
+
+import config from "@com/ui/config";
+import resolveConfig from "tailwindcss/resolveConfig";
+
+export const fullConfig = resolveConfig(config);
+export const colors = fullConfig.theme.colors;
+
+import Tokens from "./Tokens";
+
+<Meta title="Design System/Colors" />
+
+# Colors
+
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur qui ut
+beatae nam molestiae cum doloremque fugit nihil, vitae modi recusandae culpa
+odit facere eum vel reiciendis eius repellat, totam aperiam. Molestiae error
+voluptatibus et neque vel libero, harum nam quibusdam mollitia, sapiente rerum
+iste modi sit deserunt? Officiis, quaerat!
+
+## Tailwind Color Palette
+
+<ColorPalette>
+  {Object.entries(colors)
+    .filter(([, value]) => typeof value !== "string")
+    .map(([name, value]) => (
+      <ColorItem key={name} title={name} colors={value} />
+    ))}
+</ColorPalette>

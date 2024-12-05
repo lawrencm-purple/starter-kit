@@ -16,6 +16,7 @@
     "@com/prettier-config": "workspace:*",
     "@com/tailwind": "workspace:*",
     "@com/tsconfig": "workspace:*",
+    "@com/ui": "workspace:*",
     "@storybook/addon-essentials": "^8.4.6",
     "@storybook/addon-interactions": "^8.4.6",
     "@storybook/addon-onboarding": "^8.4.6",
@@ -23,10 +24,19 @@
     "@storybook/nextjs": "^8.4.6",
     "@storybook/react": "^8.4.6",
     "@storybook/test": "^8.4.6",
+    "css-loader": "^6.10.0",
+    "postcss-loader": "^8.1.1",
     "storybook": "^8.4.6",
+    "style-loader": "^4.0.0",
     "tailwind-merge": "catalog:tailwindcss",
     "tailwindcss": "catalog:tailwindcss",
     "tailwindcss-animate": "catalog:tailwindcss"
   },
-  "prettier": "@com/prettier-config"
+  "prettier": "@com/prettier-config",
+  "dependencies": {
+    "@storybook/addon-a11y": "^8.4.6",
+    "@storybook/addon-links": "^8.4.6",
+    "@storybook/addon-styling-webpack": "^1.0.1",
+    "@tailwindcss/typography": "^0.5.15"
+  }
 }

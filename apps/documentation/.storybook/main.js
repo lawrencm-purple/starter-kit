@@ -23,10 +23,56 @@ const config = {
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@chromatic-com/storybook"),
     getAbsolutePath("@storybook/addon-interactions"),
+    getAbsolutePath("@storybook/addon-a11y"),
   ],
   framework: {
     name: getAbsolutePath("@storybook/nextjs"),
     options: {},
+  },
+  webpackFinal: async (config) => {
+    config.module.rules = config.module.rules.filter(
+      (rule) => rule.test?.toString() !== "/\\.css$/",
+    );
+
+    config.module.rules.push({
+      test: /\.css$/,
+      use: [
+        require.resolve("style-loader"),
+        {
+          loader: require.resolve("css-loader"),
+          options: {
+            importLoaders: 1,
+          },
+        },
+        {
+          loader: require.resolve("postcss-loader"),
+          options: {
+            implementation: require.resolve("postcss"),
+            postcssOptions: {
+              plugins: [require("tailwindcss"), require("autoprefixer")],
+            },
+          },
+        },
+      ],
+      // include: path.resolve(
+      //   __dirname,
+      //   "../../../packages/component-library/uikit",
+      // ),
+    });
+
+    // config.resolve.alias = {
+    //   "@": path.resolve(__dirname, "../../../packages/component-library/uikit"),
+    //   "@ui": path.resolve(
+    //     __dirname,
+    //     "../../../packages/component-library/uikit/ui",
+    //   ),
+    //   "@components": path.resolve(
+    //     __dirname,
+    //     "../../../packages/component-library/uikit/components",
+    //   ),
+    // };
+
+    return config;
   },
 };
 export default config;

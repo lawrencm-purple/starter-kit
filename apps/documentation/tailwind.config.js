@@ -1,18 +1,45 @@
-import baseConfig from "@com/tailwind";
+import baseConfig from "@com/tailwind/config";
+
+const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  ...baseConfig.config,
+  // ...baseConfig.config,
   content: [
     "./src/**/*.{js,jsx,ts,tsx,mdx}",
+    "./src/**/*.{js,jsx,ts,tsx,mdx}",
+    "./tailwind.config.js",
     "./stories/**/*.{js,jsx,ts,tsx,mdx}",
     "./.storybook/**/*.{js,jsx,ts,tsx,mdx}",
     "../../packages/ui/src/components/**/*.{js,jsx,ts,tsx,mdx}",
     "../../packages/ui/src/shadcn/components/ui/**/*.{js,jsx,ts,tsx,mdx}",
   ],
+  theme: {
+    extend: {
+      ...baseConfig.config.theme?.extend,
+      textShadow: {
+        sm: "0 1px 2px rgb(var(--tw-shadow-color))",
+        DEFAULT: "0 2px 4px rgb(var(--tw-shadow-color))",
+        lg: "0 8px 16px rgb(var(--tw-shadow-color))",
+      },
+    },
+  },
 
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [
+    ...baseConfig.config.plugins,
+
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "text-shadow": (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme("textShadow") },
+      );
+    }),
+  ],
   safelist: [
     "bg-background",
     "bg-foreground",

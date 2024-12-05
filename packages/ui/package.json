@@ -26,7 +26,8 @@
   "exports": {
     ".": "./src/index.ts",
     "./utils": "./src/utils/utils.ts",
-    "./theme": "./src/index.css"
+    "./theme": "./src/index.css",
+    "./config": "./tailwind.config.js"
   },
   "devDependencies": {
     "@com/tsconfig": "workspace:*",

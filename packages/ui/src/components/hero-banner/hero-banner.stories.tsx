@@ -1,8 +1,13 @@
+// Import necessary modules and components
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 import { expect, within } from "@storybook/test";
 
 import { HeroBanner } from "./hero-banner";
+
+const seed = "abc2qfg";
+const imageUrl = `https://picsum.photos/seed/${seed}/800/400`;
+const largeImageUrl = `https://picsum.photos/seed/${seed}/2000/1000`;
 
 // Meta information about the component
 const meta = {
@@ -14,8 +19,8 @@ const meta = {
   tags: ["autodocs"],
   decorators: [
     (Story: React.ComponentType): JSX.Element => (
-      <div className="flex min-h-screen w-full flex-col justify-center bg-slate-100 align-middle">
-        <div className="container mx-auto">
+      <div className="flex h-[100vh] w-full flex-col justify-center bg-slate-100 align-middle">
+        <div className="container mx-auto sm:p-4">
           <Story />
         </div>
       </div>
@@ -32,8 +37,7 @@ export const Default: Story = {
   args: {
     title: "HeroBanner",
     description: "This is a HeroBanner component.",
-    image:
-      "http://localhost:4000/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffailshark.ca156229.png&w=828&q=75",
+    image: imageUrl,
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -50,13 +54,9 @@ export const Default: Story = {
 
     // Verify image is rendered with correct src
     const image = await canvas.findByRole("img");
-    expect(image).toHaveAttribute(
-      "src",
-      "http://localhost:4000/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffailshark.ca156229.png&w=828&q=75",
-    );
+    expect(image).toHaveAttribute("src", imageUrl);
 
-    // Interaction test (e.g., clicking a button if there is one)
-    // Assuming there's a button that changes text to 'Clicked!'
+    // Assume there's a button interaction
     const button = await canvas.findByRole("button", { name: /click me/i });
     button.click();
 
@@ -65,19 +65,21 @@ export const Default: Story = {
   },
 };
 
-// Additional story configurations to test different states
-export const WithDifferentTitle: Story = {
+export const WithLongTitle: Story = {
   args: {
-    title: "Welcome to Our Site",
+    title:
+      "This is an exceptionally long title meant to test how the HeroBanner component handles overflow, text wrapping, and scalability across different screen sizes and devices to ensure that user experience remains optimal and no visual elements are compromised.",
     description: "Experience the best services we offer.",
-    image: "https://via.placeholder.com/800x400",
+    image: imageUrl,
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    // Verify custom title is rendered
-    const customTitle = await canvas.findByText("Welcome to Our Site");
-    expect(customTitle).toBeInTheDocument();
+    // Verify long title is rendered
+    const longTitle = await canvas.findByText(
+      "This is an exceptionally long title meant to test how the HeroBanner component handles overflow, text wrapping, and scalability across different screen sizes and devices to ensure that user experience remains optimal and no visual elements are compromised.",
+    );
+    expect(longTitle).toBeInTheDocument();
   },
 };
 
@@ -97,6 +99,88 @@ export const NoImage: Story = {
     // Verify no image is present
     const images = canvas.queryAllByRole("img");
     expect(images.length).toBe(0);
+  },
+};
+
+// Test case for empty content
+export const EmptyContent: Story = {
+  args: {
+    title: "",
+    description: "",
+    image: "",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    // Verify nothing is rendered
+    const anyText = canvas.queryAllByText(/./); // Matches any text
+    expect(anyText.length).toBe(0);
+
+    const anyImages = canvas.queryAllByRole("img");
+    expect(anyImages.length).toBe(0);
+  },
+};
+
+// Test case with a very large image
+export const LargeImage: Story = {
+  args: {
+    title: "HeroBanner with Large Image",
+    description: "Testing how a large image is handled by the component.",
+    image: largeImageUrl, // Very large image
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    // Verify title and description are rendered
+    const largeImageTitle = await canvas.findByText(
+      "HeroBanner with Large Image",
+    );
+    expect(largeImageTitle).toBeInTheDocument();
+
+    const largeImageDescription = await canvas.findByText(
+      "Testing how a large image is handled by the component.",
+    );
+    expect(largeImageDescription).toBeInTheDocument();
+
+    // Verify large image is present
+    const largeImage = await canvas.findByRole("img");
+    expect(largeImage).toHaveAttribute("src", largeImageUrl);
+  },
+};
+
+export const WithLargeDescription: Story = {
+  args: {
+    title: "HeroBanner with Large Description",
+    description: `
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie, 
+      nunc eu sagittis consectetur, justo erat dignissim orci, eu fermentum lorem 
+      nisl nec nunc. Aliquam erat volutpat. Fusce non nisi ut magna bibendum suscipit. 
+      Sed ac ornare mi. Curabitur lacinia ultrices purus, at iaculis felis ultrices in. 
+      Aenean condimentum, tellus et varius commodo, massa sapien porttitor urna, at 
+      vehicula ante purus non justo. Nam ullamcorper facilisis lacus, et luctus enim 
+      congue non. Integer tincidunt blandit augue quis pretium. Quisque porta auctor 
+      libero, vel efficitur odio cursus vitae. Vestibulum ante ipsum primis in faucibus 
+      orci luctus et ultrices posuere cubilia curae; Duis sit amet ultricies justo, 
+      nec laoreet mi. Suspendisse potenti. Etiam pharetra ligula vel risus sodales, 
+      sed scelerisque mauris tincidunt. Morbi et dolor ut arcu viverra tristique nec 
+      fringilla nisl. Nulla facilisi.
+    `,
+    image: imageUrl,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    // Verify title is rendered
+    const largeDescriptionTitle = await canvas.findByText(
+      "HeroBanner with Large Description",
+    );
+    expect(largeDescriptionTitle).toBeInTheDocument();
+
+    // Verify large description is rendered
+    const largeDescriptionSnippet = await canvas.findByText(
+      /Lorem ipsum dolor sit amet/i,
+    );
+    expect(largeDescriptionSnippet).toBeInTheDocument();
   },
 };
 
