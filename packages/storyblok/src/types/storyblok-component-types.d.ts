@@ -24,6 +24,8 @@ export interface HeroBannerStoryblok {
 }
 
 export interface PageStoryblok {
+  title?: string;
+  description?: string;
   body?: (FeatureStoryblok | GridStoryblok | HeroBannerStoryblok | PageStoryblok | TeaserStoryblok)[];
   component: "page";
   _uid: string;

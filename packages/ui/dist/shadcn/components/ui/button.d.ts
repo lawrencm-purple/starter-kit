@@ -5,6 +5,7 @@ declare const buttonVariants: (props?: ({
     size?: "default" | "sm" | "lg" | "icon" | null | undefined;
 } & import("class-variance-authority/types").ClassProp) | undefined) => string;
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
     asChild?: boolean;
 }
 declare const Button: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;

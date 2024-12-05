@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "xxbuild": "next build",
+    "build": "next build",
     "check": "next lint && tsc --noEmit",
     "dev": "next dev  --port 4000 --turbo  && local-ssl-proxy --source 4010 --target 4000 --cert ~/keys/localhost.pem --key ~/keys/localhost-key.pem",
     "proxy": "local-ssl-proxy --source 4010 --target 4000 --cert ~/keys/localhost.pem --key ~/keys/localhost-key.pem",
@@ -22,6 +22,7 @@
     "@com/auth": "workspace:*",
     "@com/db": "workspace:*",
     "@com/storyblok": "workspace:*",
+    "@com/ui": "workspace:*",
     "@prisma/client": "catalog:prisma5",
     "@storyblok/react": "catalog:storyblok",
     "@t3-oss/env-nextjs": "catalog:",

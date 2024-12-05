@@ -88,6 +88,39 @@ declare const createCaller: import("@trpc/server/unstable-core-do-not-import").R
             output: string;
         }>;
     }>;
+    cms: import("@trpc/server/unstable-core-do-not-import").BuiltRouter<{
+        ctx: {
+            session: import("next-auth").Session | null;
+            db: import("@prisma/client").PrismaClient<{
+                log: ("query" | "warn" | "error")[];
+            }, never, import("@prisma/client/runtime/library").DefaultArgs>;
+            token: string | null;
+        };
+        meta: object;
+        errorShape: {
+            data: {
+                zodError: import("zod").typeToFlattenedError<any, string> | null;
+                code: import("@trpc/server/unstable-core-do-not-import").TRPC_ERROR_CODE_KEY;
+                httpStatus: number;
+                path?: string;
+                stack?: string;
+            };
+            message: string;
+            code: import("@trpc/server/unstable-core-do-not-import").TRPC_ERROR_CODE_NUMBER;
+        };
+        transformer: true;
+    }, {
+        getLayout: import("@trpc/server").TRPCQueryProcedure<{
+            input: {
+                slug: string;
+            };
+            output: {
+                story: {
+                    content?: any;
+                };
+            };
+        }>;
+    }>;
 }>>;
 /**
  * Inference helpers for input types

@@ -1,29 +1,25 @@
 // import { LatestPost } from "./_components/post";
-import { getStoryblokApi } from "@com/storyblok";
-import { StoryblokStory } from "@storyblok/react/rsc";
+import { PageStoryblok } from "@com/storyblok/types";
+import { ISbStory, StoryblokStory } from "@storyblok/react/rsc";
+import { TRPCError } from "@trpc/server";
 
-import { HydrateClient } from "../trpc/server";
+import { api, HydrateClient } from "../trpc/server";
+
+//invalidate next page
+export const revalidate = 0;
 
 export default async function Home() {
-  const { data } = await fetchData();
+  const response = await api.cms.getLayout({
+    slug: "home",
+  });
 
   return (
     <HydrateClient>
       <main className="flex min-h-screen w-full flex-col items-center justify-center bg-slate-100">
         <div className="container mx-auto">
-          <StoryblokStory story={data.story} />
+          <StoryblokStory story={response.story} />
         </div>
-        {/* <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-          <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
-            Public Website
-          </h1>
-        </div> */}
       </main>
     </HydrateClient>
   );
-}
-
-export async function fetchData() {
-  const storyblokApi = getStoryblokApi();
-  return storyblokApi.get("cdn/stories/home", { version: "draft" });
 }

@@ -82,6 +82,39 @@ export declare const appRouter: import("@trpc/server/unstable-core-do-not-import
             output: string;
         }>;
     }>;
+    cms: import("@trpc/server/unstable-core-do-not-import").BuiltRouter<{
+        ctx: {
+            session: import("next-auth").Session | null;
+            db: import("@prisma/client").PrismaClient<{
+                log: ("query" | "warn" | "error")[];
+            }, never, import("@prisma/client/runtime/library").DefaultArgs>;
+            token: string | null;
+        };
+        meta: object;
+        errorShape: {
+            data: {
+                zodError: import("zod").typeToFlattenedError<any, string> | null;
+                code: import("@trpc/server/unstable-core-do-not-import").TRPC_ERROR_CODE_KEY;
+                httpStatus: number;
+                path?: string;
+                stack?: string;
+            };
+            message: string;
+            code: import("@trpc/server/unstable-core-do-not-import").TRPC_ERROR_CODE_NUMBER;
+        };
+        transformer: true;
+    }, {
+        getLayout: import("@trpc/server").TRPCQueryProcedure<{
+            input: {
+                slug: string;
+            };
+            output: {
+                story: {
+                    content?: any;
+                };
+            };
+        }>;
+    }>;
 }>>;
 export type AppRouter = typeof appRouter;
 /**
@@ -168,6 +201,39 @@ export declare const createCaller: import("@trpc/server/unstable-core-do-not-imp
         getSecretMessage: import("@trpc/server").TRPCQueryProcedure<{
             input: void;
             output: string;
+        }>;
+    }>;
+    cms: import("@trpc/server/unstable-core-do-not-import").BuiltRouter<{
+        ctx: {
+            session: import("next-auth").Session | null;
+            db: import("@prisma/client").PrismaClient<{
+                log: ("query" | "warn" | "error")[];
+            }, never, import("@prisma/client/runtime/library").DefaultArgs>;
+            token: string | null;
+        };
+        meta: object;
+        errorShape: {
+            data: {
+                zodError: import("zod").typeToFlattenedError<any, string> | null;
+                code: import("@trpc/server/unstable-core-do-not-import").TRPC_ERROR_CODE_KEY;
+                httpStatus: number;
+                path?: string;
+                stack?: string;
+            };
+            message: string;
+            code: import("@trpc/server/unstable-core-do-not-import").TRPC_ERROR_CODE_NUMBER;
+        };
+        transformer: true;
+    }, {
+        getLayout: import("@trpc/server").TRPCQueryProcedure<{
+            input: {
+                slug: string;
+            };
+            output: {
+                story: {
+                    content?: any;
+                };
+            };
         }>;
     }>;
 }>>;

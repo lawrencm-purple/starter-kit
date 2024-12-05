@@ -29,7 +29,9 @@
   "devDependencies": {
     "@com/eslint-config": "workspace:*",
     "@com/prettier-config": "workspace:*",
+    "@com/storyblok": "workspace:*",
     "@com/tsconfig": "workspace:*",
+    "@storyblok/react": "catalog:storyblok",
     "@types/node": "catalog:node20",
     "eslint": "catalog:",
     "prettier": "catalog:",

@@ -1,4 +1,4 @@
-
+import { cmsRouter } from "./routers/cms";
 import { postRouter } from "./routers/post";
 import { createCallerFactory, createTRPCRouter } from "./trpc";
 
@@ -9,10 +9,11 @@ import { createCallerFactory, createTRPCRouter } from "./trpc";
  */
 export const appRouter = createTRPCRouter({
   post: postRouter,
+  cms: cmsRouter,
 });
 
 // export type definition of API
-export type AppRouter = typeof appRouter; 
+export type AppRouter = typeof appRouter;
 
 /**
  * Create a server-side caller for the tRPC API.

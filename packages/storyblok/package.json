@@ -25,7 +25,7 @@
       "./src/storyblok.ts"
     ],
     "./provider": "./src/storyblok-provider.tsx",
-    "./types": "./src/types/*.ts",
-    "./definitions": "./src/types/*.json"
+    "./types": "./src/types/storyblok-component-types.d.ts",
+    "./definitions": "./src/types/components.3000815.json"
   }
 }

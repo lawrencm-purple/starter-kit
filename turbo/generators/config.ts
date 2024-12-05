@@ -22,12 +22,12 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
     actions: [
       {
         type: "add",
-        path: "{{ turbo.paths.root }}/packages/ui/src/{{ dashCase name }}/{{ dashCase name }}.tsx",
+        path: "{{ turbo.paths.root }}/packages/ui/src/components/{{ dashCase name }}/{{ dashCase name }}.tsx",
         templateFile: "templates/ui-component/component.hbs",
       },
       {
         type: "add",
-        path: "{{ turbo.paths.root }}/packages/ui/src/{{ dashCase name }}/{{ dashCase name }}.stories.tsx",
+        path: "{{ turbo.paths.root }}/packages/ui/src/components/{{ dashCase name }}/{{ dashCase name }}.stories.tsx",
         templateFile: "templates/ui-component/component.stories.hbs",
       },
     ],
