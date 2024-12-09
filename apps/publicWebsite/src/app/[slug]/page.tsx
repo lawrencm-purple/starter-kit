@@ -15,7 +15,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   try {
     const response = (await api.cms.getPage({
-      slug: params.slug,
+      slug: (await params?.slug) ?? "/",
     })) as ISbStory<PageStoryblok>;
 
     return {

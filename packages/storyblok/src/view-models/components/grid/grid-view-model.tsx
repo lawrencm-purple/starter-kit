@@ -1,6 +1,7 @@
 import React from "react";
-import { GridStoryblok } from "../../../types/storyblok-component-types";
 import { StoryblokServerComponent } from "@storyblok/react/rsc";
+
+import { GridStoryblok } from "../../../types/storyblok-component-types";
 
 type GridViewModelProps = {
   blok: GridStoryblok;
@@ -8,9 +9,9 @@ type GridViewModelProps = {
 
 const GridViewModel = ({ blok }: GridViewModelProps) => {
   return (
-    <div className="grid grid-cols-3 w-full">
+    <div className="grid w-full grid-cols-3">
       {blok.columns?.map((nestedBlok) => (
-        <div className="">
+        <div className="" key={nestedBlok._uid}>
           <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
         </div>
       ))}

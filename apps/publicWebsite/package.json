@@ -6,7 +6,7 @@
   "scripts": {
     "build": "next build",
     "check": "next lint && tsc --noEmit",
-    "dev": "next dev  --port 4000 --turbo  && local-ssl-proxy --source 4010 --target 4000 --cert ~/keys/localhost.pem --key ~/keys/localhost-key.pem",
+    "dev": "next dev  --port 4000 --turbo ",
     "proxy": "local-ssl-proxy --source 4010 --target 4000 --cert ~/keys/localhost.pem --key ~/keys/localhost-key.pem",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
     "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",

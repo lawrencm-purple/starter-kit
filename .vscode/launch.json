@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Admin Portal: Fullstack debug",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/apps/adminPortal/node_modules/next/dist/bin/next",
+      "runtimeArgs": ["--inspect"],
+      "skipFiles": ["<node_internals>/**"],
+      "serverReadyAction": {
+        "action": "debugWithChrome",
+        "killOnServerStop": true,
+        "pattern": "- Local:.+(https?://.+)",
+        "uriFormat": "%s",
+        "webRoot": "${workspaceFolder}"
+      },
+      "cwd": "${workspaceFolder}/apps/adminPortal"
+    },
+    {
+      "name": "Public Web: Fullstack debug",
+      "type": "node",
+      "request": "launch",
+
+      "program": "${workspaceFolder}/apps/publicWebsite/node_modules/next/dist/bin/next",
+      "runtimeArgs": ["--inspect"],
+      "args": ["-p", "4000"],
+      "skipFiles": ["<node_internals>/**"],
+      "serverReadyAction": {
+        "action": "debugWithChrome",
+        "killOnServerStop": true,
+        "pattern": "- Local:.+(https?://.+)",
+        "uriFormat": "%s/home",
+        "webRoot": "${workspaceFolder}"
+      },
+      "cwd": "${workspaceFolder}/apps/publicWebsite"
+    }
+  ]
+}
