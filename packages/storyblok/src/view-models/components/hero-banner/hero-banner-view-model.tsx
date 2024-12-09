@@ -14,7 +14,8 @@ const HeroBannerViewModel = ({ blok }: HeroBannerViewModelProps) => {
       <HeroBanner
         title={blok.title!}
         description={blok.description!}
-        image={blok.image}
+        imageUrl={blok.image?.filename!}
+        imageAlt={blok.image?.alt!}
       />
     </div>
   );

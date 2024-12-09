@@ -3,9 +3,20 @@
  * for Docker builds.
  */
 import path from "path";
+
 import "./src/env.js";
 
+import { hostname } from "os";
+
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  images: {
+    remotePatterns: [
+      {
+        hostname: "a-ap.storyblok.com",
+      },
+    ],
+  },
+};
 
 export default config;

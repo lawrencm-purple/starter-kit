@@ -14,6 +14,7 @@ module.exports = {
     "./.storybook/**/*.{js,jsx,ts,tsx,mdx}",
     "../../packages/ui/src/components/**/*.{js,jsx,ts,tsx,mdx}",
     "../../packages/ui/src/shadcn/components/ui/**/*.{js,jsx,ts,tsx,mdx}",
+    "../../packages/storyblok/src/view-models/**/*.{js,jsx,ts,tsx,mdx}",
   ],
   theme: {
     extend: {

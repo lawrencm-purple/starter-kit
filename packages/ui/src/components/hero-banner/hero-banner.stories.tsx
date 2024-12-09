@@ -37,7 +37,8 @@ export const Default: Story = {
   args: {
     title: "HeroBanner",
     description: "This is a HeroBanner component.",
-    image: imageUrl,
+    imageUrl: imageUrl,
+    imageAlt: "image alt tag",
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -70,7 +71,8 @@ export const WithLongTitle: Story = {
     title:
       "This is an exceptionally long title meant to test how the HeroBanner component handles overflow, text wrapping, and scalability across different screen sizes and devices to ensure that user experience remains optimal and no visual elements are compromised.",
     description: "Experience the best services we offer.",
-    image: imageUrl,
+    imageUrl: imageUrl,
+    imageAlt: "image alt tag",
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -87,7 +89,8 @@ export const NoImage: Story = {
   args: {
     title: "HeroBanner without Image",
     description: "This is a HeroBanner component without an image.",
-    image: "", // Intentionally no image
+    imageUrl: "", // Intentionally no image
+    imageAlt: "image alt tag",
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -107,7 +110,8 @@ export const EmptyContent: Story = {
   args: {
     title: "",
     description: "",
-    image: "",
+    imageUrl: "",
+    imageAlt: "image alt tag",
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -126,7 +130,8 @@ export const LargeImage: Story = {
   args: {
     title: "HeroBanner with Large Image",
     description: "Testing how a large image is handled by the component.",
-    image: largeImageUrl, // Very large image
+    imageUrl: largeImageUrl, // Very large image
+    imageAlt: "image alt tag",
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -165,7 +170,8 @@ export const WithLargeDescription: Story = {
       sed scelerisque mauris tincidunt. Morbi et dolor ut arcu viverra tristique nec 
       fringilla nisl. Nulla facilisi.
     `,
-    image: imageUrl,
+    imageUrl: imageUrl,
+    imageAlt: "image alt tag",
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);

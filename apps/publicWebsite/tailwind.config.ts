@@ -1,21 +1,73 @@
-import { type Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
+import baseConfig from "@com/tailwind/config";
 
-import baseConfig from "@com/tailwind";
+const plugin = require("tailwindcss/plugin");
 
+/** @type {import('tailwindcss').Config} */
 
-export default {
-  content: Array.isArray(baseConfig.config.content) 
-    ? [...baseConfig.config.content, "../../packages/ui/src/**/*.{ts,tsx}", "./../../packages/storyblok/src/**/*.{ts,tsx}",]
-    : ["./src/**/*.{ts,tsx}", "../../packages/ui/src/**/*.{ts,tsx}", "./../../packages/storyblok/src/**/*.{ts,tsx}"],
-  
-  presets: [baseConfig.config],
+module.exports = {
+  // ...baseConfig.config,
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx,mdx}",
+    "./src/**/*.{js,jsx,ts,tsx,mdx}",
+    "./src/app/**/*.{js,jsx,ts,tsx,mdx}",
+    "./src/app/**/*.{js,jsx,ts,tsx,mdx}",
+    "./tailwind.config.js",
+    "./stories/**/*.{js,jsx,ts,tsx,mdx}",
+    "./.storybook/**/*.{js,jsx,ts,tsx,mdx}",
+    "../../packages/ui/src/components/**/*.{js,jsx,ts,tsx,mdx}",
+    "../../packages/ui/src/shadcn/components/ui/**/*.{js,jsx,ts,tsx,mdx}",
+    "../../packages/storyblok/src/view-models/**/*.{js,jsx,ts,tsx,mdx}",
+  ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
-        mono: ["var(--font-geist-mono)", ...fontFamily.mono],
+      ...baseConfig.config.theme?.extend,
+      textShadow: {
+        sm: "0 1px 2px rgb(var(--tw-shadow-color))",
+        DEFAULT: "0 2px 2px rgb(var(--tw-shadow-color)/.5)",
+        lg: "0 8px 16px rgb(var(--tw-shadow-color))",
       },
     },
   },
-} satisfies Config;
+
+  plugins: [
+    ...baseConfig.config.plugins,
+
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "text-shadow": (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme("textShadow") },
+      );
+    }),
+  ],
+  safelist: [
+    "bg-background",
+    "bg-foreground",
+    "bg-muted",
+    "bg-muted-foreground",
+    "bg-popover",
+    "bg-popover-foreground",
+    "bg-border",
+    "bg-input",
+    "bg-card",
+    "bg-card-foreground",
+    "bg-primary",
+    "bg-primary-foreground",
+    "bg-secondary",
+    "bg-secondary-foreground",
+    "bg-accent",
+    "bg-accent-foreground",
+    "bg-destructive",
+    "bg-destructive-foreground",
+    "bg-ring",
+    "text-7xl",
+    "text-6xl",
+    "text-5xl",
+    "text-4xl",
+    "w-full",
+    "prose",
+  ],
+};
