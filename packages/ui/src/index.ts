@@ -3,3 +3,4 @@ export * from "./shadcn/components/ui/button";
 export * from "./shadcn/components/ui/alert-dialog";
 export * from "./components/error/error";
 export * from "./components/hero-banner/hero-banner";
+export * from "./components/tabbed-content/tabbed-content";

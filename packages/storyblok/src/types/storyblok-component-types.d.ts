@@ -9,13 +9,21 @@ export interface FeatureStoryblok {
 }
 
 export interface GridStoryblok {
-  columns?: (FeatureStoryblok | GridStoryblok | HeroBannerStoryblok | PageStoryblok | TeaserStoryblok)[];
+  columns?: (
+    | FeatureStoryblok
+    | GridStoryblok
+    | HeroBannerStoryblok
+    | PageStoryblok
+    | TabPanelStoryblok
+    | TabsPanelStoryblok
+    | TeaserStoryblok
+  )[];
   component: "grid";
   _uid: string;
   [k: string]: any;
 }
 
-export interface AssetStoryblok {
+export type MultiassetStoryblok = {
   alt: string | null;
   copyright?: string | null;
   fieldtype: "asset";
@@ -38,12 +46,12 @@ export interface AssetStoryblok {
   public_id?: string | null;
   content_type?: string;
   [k: string]: any;
-}
+}[];
 
 export interface HeroBannerStoryblok {
   title?: string;
   description?: string;
-  image?: AssetStoryblok;
+  images?: MultiassetStoryblok;
   component: "heroBanner";
   _uid: string;
   [k: string]: any;
@@ -52,8 +60,40 @@ export interface HeroBannerStoryblok {
 export interface PageStoryblok {
   title?: string;
   description?: string;
-  body?: (FeatureStoryblok | GridStoryblok | HeroBannerStoryblok | PageStoryblok | TeaserStoryblok)[];
+  body?: (
+    | FeatureStoryblok
+    | GridStoryblok
+    | HeroBannerStoryblok
+    | PageStoryblok
+    | TabPanelStoryblok
+    | TabsPanelStoryblok
+    | TeaserStoryblok
+  )[];
   component: "page";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface TabPanelStoryblok {
+  tabLabel?: string;
+  tabBody?: (
+    | FeatureStoryblok
+    | GridStoryblok
+    | HeroBannerStoryblok
+    | PageStoryblok
+    | TabPanelStoryblok
+    | TabsPanelStoryblok
+    | TeaserStoryblok
+  )[];
+  component: "tabPanel";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface TabsPanelStoryblok {
+  title?: string;
+  tabs?: TabPanelStoryblok[];
+  component: "tabsPanel";
   _uid: string;
   [k: string]: any;
 }

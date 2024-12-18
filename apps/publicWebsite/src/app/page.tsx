@@ -15,11 +15,7 @@ export default async function Home() {
 
   return (
     <HydrateClient>
-      <main className="flex min-h-screen w-full flex-col items-center justify-center bg-slate-100">
-        <div className="container mx-auto">
-          <StoryblokStory story={response.story} />
-        </div>
-      </main>
+      <StoryblokStory story={response.story} />
     </HydrateClient>
   );
 }
