@@ -7,6 +7,7 @@
     "build": "tsc",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "dev": "tsc",
+    "test": "vitest run --coverage",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
@@ -29,7 +30,10 @@
   },
   "devDependencies": {
     "@com/tsconfig": "workspace:*",
-    "@types/react": "catalog:react18"
+    "@types/react": "catalog:react18",
+    "@vitest/coverage-v8": "2.1.8",
+    "vitest": "^2.1.8",
+    "vitest-mock-extended": "^2.0.2"
   },
   "prettier": "@com/prettier-config"
 }

@@ -5,6 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
+    "test": "vitest",
+    "testui": "vitest  --ui --coverage",
+    "testcoverage": "vitest run --coverage",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "dev": "tsc",
     "format": "prettier --check . --ignore-path ../../.gitignore",
@@ -31,11 +34,16 @@
     "@com/prettier-config": "workspace:*",
     "@com/storyblok": "workspace:*",
     "@com/tsconfig": "workspace:*",
+    "@prisma/client": "catalog:prisma5",
     "@storyblok/react": "catalog:storyblok",
     "@types/node": "catalog:node20",
+    "@vitest/coverage-istanbul": "2.1.8",
+    "@vitest/ui": "2.1.8",
     "eslint": "catalog:",
     "prettier": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "^2.1.8",
+    "vitest-mock-extended": "^2.0.2"
   },
   "prettier": "@com/prettier-config"
 }
