@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1736392630143" clover="3.2.0">
-  <project timestamp="1736392630143" name="All files">
-    <metrics statements="16" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="4" elements="25" coveredelements="15" complexity="0" loc="16" ncloc="16" packages="1" files="2" classes="2"/>
+<coverage generated="1736409979288" clover="3.2.0">
+  <project timestamp="1736409979288" name="All files">
+    <metrics statements="16" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7" elements="25" coveredelements="25" complexity="0" loc="16" ncloc="16" packages="1" files="2" classes="2"/>
     <file name="cms.ts" path="/Users/lawrencm/Projects/starterkit/packages/api/src/routers/cms.ts">
-      <metrics statements="10" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <line num="11" count="4" type="stmt"/>
-      <line num="19" count="4" type="stmt"/>
-      <line num="27" count="4" type="stmt"/>
-      <line num="38" count="0" type="stmt"/>
-      <line num="39" count="0" type="stmt"/>
-      <line num="41" count="0" type="stmt"/>
-      <line num="45" count="0" type="stmt"/>
-      <line num="48" count="0" type="stmt"/>
-      <line num="51" count="0" type="stmt"/>
-      <line num="58" count="0" type="stmt"/>
+      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <line num="11" count="5" type="stmt"/>
+      <line num="19" count="5" type="stmt"/>
+      <line num="27" count="5" type="stmt"/>
+      <line num="38" count="6" type="stmt"/>
+      <line num="39" count="6" type="stmt"/>
+      <line num="41" count="5" type="stmt"/>
+      <line num="45" count="5" type="stmt"/>
+      <line num="48" count="3" type="stmt"/>
+      <line num="51" count="2" type="stmt"/>
+      <line num="58" count="1" type="stmt"/>
     </file>
     <file name="post.ts" path="/Users/lawrencm/Projects/starterkit/packages/api/src/routers/post.ts">
       <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
-      <line num="10" count="4" type="stmt"/>
+      <line num="10" count="5" type="stmt"/>
       <line num="14" count="6" type="stmt"/>
       <line num="22" count="5" type="stmt"/>
       <line num="31" count="7" type="stmt"/>
