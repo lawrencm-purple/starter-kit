@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 22.12.0
       - name: Install dependencies
-        run: cd . ./apps/storybookapp/ && pnpm install
+        run: cd ./apps/storybookapp/ && pnpm install
       - name: Run Chromatic
         uses: chromaui/action@latest
         with:
