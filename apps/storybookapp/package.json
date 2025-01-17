@@ -8,7 +8,8 @@
     "test": "echo 'Add test script here'",
     "lint": "echo 'Add lint script here'",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_037a93be7494078"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.3",
