@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "./button";
-import { expect, fn, userEvent, waitFor, within } from "@storybook/test";
 import React from "react";
+import { expect, fn, userEvent, waitFor, within } from "@storybook/test";
+
+import { Button } from "./button";
 
 const meta: Meta = {
   component: Button,
@@ -55,8 +56,18 @@ export const WithIcons: Story = {
   args: {},
   render: (args) => (
     <Button {...args}>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+        />
       </svg>
       <span>With Icon</span>
     </Button>
@@ -105,8 +116,18 @@ export const Icon: Story = {
   },
   render: (args) => (
     <Button {...args}>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+        />
       </svg>
     </Button>
   ),
