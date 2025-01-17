@@ -22,5 +22,5 @@ jobs:
         uses: chromaui/action@latest
         # change the directory to the storybook app
         with:
-          directory: ./apps/storybookapp
+          storybookBaseDir: ./apps/storybookapp
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
