@@ -26,7 +26,9 @@ const config = {
     getAbsolutePath("@storybook/addon-a11y"),
   ],
   framework: {
-    name: getAbsolutePath("@storybook/nextjs"),
+    name: getAbsolutePath("@storybook/experimental-nextjs-vite"),
+
+    // name: getAbsolutePath("@storybook/nextjs"),
     options: {},
   },
   webpackFinal: async (config) => {

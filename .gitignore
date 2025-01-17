@@ -61,3 +61,4 @@ apps/nextjs/.next/
 packages/ui/dist/
 packages/api/dist/
 packages/**/dist/
+apps/documentation/storybook-static/
