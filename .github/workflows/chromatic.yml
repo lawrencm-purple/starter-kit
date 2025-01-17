@@ -20,6 +20,7 @@ jobs:
         run: cd ./apps/storybookapp/ && pnpm install
       - name: Run Chromatic
         uses: chromaui/action@latest
+        # change the directory to the storybook app
         with:
-          # ⚠️ Make sure to configure a `CHROMATIC_PROJECT_TOKEN` repository secret
+          directory: ./apps/storybookapp
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
