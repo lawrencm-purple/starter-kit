@@ -21,5 +21,5 @@ jobs:
       - name: Run Chromatic
         uses: chromaui/action@latest
         with:
-          command: "turborepo run storybook:chromatic -- --project-token=$CHROMATIC_PROJECT_TOKEN"
+          working-directory: apps/storybookapp
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
