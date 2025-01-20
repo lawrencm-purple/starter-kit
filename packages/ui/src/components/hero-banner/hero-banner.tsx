@@ -52,7 +52,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
       <div className="relative m-0 mx-auto bg-black text-white">
         <div className="container relative mx-auto h-[800px] bg-black">
           <div className="absolute bottom-[100px] z-20 flex flex-col">
-            <div className="text-shadow text-purple-400-400 mb-8 line-clamp-2 w-[400px] pb-2 text-7xl font-extrabold tracking-tight">
+            <div className="text-shadow mb-8 line-clamp-2 w-[400px] pb-2 text-7xl font-extrabold tracking-tight text-purple-400">
               {title}
             </div>
             <div className="mr-[500px] text-4xl font-extralight tracking-normal text-white">
