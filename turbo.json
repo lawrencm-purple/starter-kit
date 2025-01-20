@@ -30,6 +30,11 @@
       "cache": false,
       "persistent": false
     },
+    "storybook:chromatic": {
+      "dependsOn": ["^storybook:chromatic"],
+      "cache": false,
+      "persistent": false
+    },
     "format": {
       "outputs": [".cache/.prettiercache"],
       "outputLogs": "new-only"

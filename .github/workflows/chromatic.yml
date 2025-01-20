@@ -16,11 +16,14 @@ jobs:
           node-version: 22.12.0
       - name: Install pnpm
         uses: pnpm/action-setup@v4
+      - name: Install turborepo
+        run: pnpm add -g @turborepo/cli
       - name: Install dependencies
-        run: cd ./apps/storybookapp/ && pnpm install
+        run: pnpm install
       - name: Run Chromatic
         uses: chromaui/action@latest
+
         # change the directory to the storybook app
         with:
-          storybookBaseDir: ./apps/storybookapp
+          command: "turborepo run storybook:chromatic -- --project-token=$CHROMATIC_PROJECT_TOKEN"
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}

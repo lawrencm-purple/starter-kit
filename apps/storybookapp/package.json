@@ -6,7 +6,7 @@
     "dev": "echo 'Add dev script here'",
     "build": "echo 'Add build script here'",
     "test": "echo 'Add test script here'",
-    "chromatic": "npx chromatic --project-token=chpt_037a93be7494078",
+    "storybook:chromatic": "npx chromatic --project-token=chpt_037a93be7494078",
     "lint": "echo 'Add lint script here'",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
